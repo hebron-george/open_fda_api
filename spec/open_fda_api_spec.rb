@@ -5,7 +5,15 @@ RSpec.describe OpenFdaApi do
     expect(OpenFdaApi::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".client" do
+    context "with an api key" do
+      subject(:client) { OpenFdaApi.client(api_key: "gibberish") }
+      it { expect { client }.to_not raise_error }
+    end
+
+    context "without an api key" do
+      subject(:client) { OpenFdaApi.client }
+      it { expect { client }.to_not raise_error }
+    end
   end
 end
