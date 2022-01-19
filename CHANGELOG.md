@@ -1,6 +1,9 @@
 ## [Unreleased]
 
 ## [0.0.2] - 2022-01-19
+- Update version again because CHANGELOG wasn't updated along with the 0.0.2 release.
+
+## [0.0.2] - 2022-01-19
 
 - Add `OpenFdaApi::Client#drugs` to interact with the FDA Drug endpoints.
   - The `adverse_events` endpoint has been implemented in a very limited capacity.
