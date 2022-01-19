@@ -43,12 +43,12 @@ module OpenFdaApi
       return "" if search.empty?
 
       value = if search.count == 1 # AND case
-        # Turns [{a: b, c: d}] into "a:b+AND+c:d"
-        search.first.map { |k, v| "#{k}:#{v}" }.join("+AND+")
-      else # OR case
-        # Turns [{a: b}, {c: d}] into "a:b+c:d"
-        search.map { |h| "#{h.keys.first}:#{h.values.first}" }.join("+")
-      end
+                # Turns [{a: b, c: d}] into "a:b+AND+c:d"
+                search.first.map { |k, v| "#{k}:#{v}" }.join("+AND+")
+              else # OR case
+                # Turns [{a: b}, {c: d}] into "a:b+c:d"
+                search.map { |h| "#{h.keys.first}:#{h.values.first}" }.join("+")
+              end
 
       "search=#{value}"
     end
