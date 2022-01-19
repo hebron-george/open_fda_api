@@ -13,12 +13,27 @@ RSpec.describe OpenFdaApi::QueryBuilder do
 
       context "with AND arguments" do
         let(:search) { [{ a: "b", c: "d" }] }
-        it { is_expected.to eq("search=a:b+AND+c:d") }
+        it { is_expected.to eq("search=(a:b+AND+c:d)") }
       end
 
       context "with OR arguments" do
         let(:search) { [{ a: "b" }, { c: "d" }] }
-        it { is_expected.to eq("search=a:b+c:d") }
+        it { is_expected.to eq("search=(a:b)+(c:d)") }
+      end
+
+      context "with one argument" do
+        let(:search) { [{ a: "b" }] }
+        it { is_expected.to eq("search=(a:b)") }
+      end
+
+      context "with both AND and OR arguments" do
+        let(:search) { [{ a: "b", c: "d" }, { e: "f" }] }
+        it { is_expected.to eq("search=(a:b+AND+c:d)+(e:f)") }
+      end
+
+      context "with spaces in an argument" do
+        let(:search) { [{ foo: "hello world" }] }
+        it { is_expected.to eq("search=(foo:hello+world)") }
       end
     end
   end

@@ -1,6 +1,11 @@
 ## [Unreleased]
 
-## [0.0.2] - 2022-01-19
+## [0.0.4] - 2022-01-19
+- Fix version string in changelog
+- Update Query Builder to group search arguments properly
+- Update Query Builder to replace spaces with pluses in search values as openFDA API documentation requires
+
+## [0.0.3] - 2022-01-19
 - Update version again because CHANGELOG wasn't updated along with the 0.0.2 release.
 
 ## [0.0.2] - 2022-01-19
