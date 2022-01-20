@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module OpenFdaApi
+  class InvalidQueryArgument < ArgumentError; end
+
   # A helper to build queries against the openFDA API
   #
   # The API supports five query parameters. The basic building block of queries is the search parameter.
@@ -24,7 +26,8 @@ module OpenFdaApi
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
     # @param [Array<Hash>] search
-    def initialize(search: [])
+    def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0)
+      validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
       @search = build_search_string(search)
     end
 
@@ -39,6 +42,25 @@ module OpenFdaApi
 
     private
 
+    def validate_arguments!(valid_search_fields, search:, sort:, count:, skip:)
+      # `search` keys must exist in adverse_events_fields.yml
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: search)
+      raise InvalidQueryArgument, "'search' has invalid fields: #{invalid_fields}" if invalid_fields.any?
+
+      # `sort` keys must exist in adverse_events_fields.yml
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: sort)
+      raise InvalidQueryArgument, "'sort' has invalid fields: #{invalid_fields}" if invalid_fields.any?
+
+      # `count` keys must exist in adverse_events_fields.yml
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: count)
+      raise InvalidQueryArgument, "'count' has invalid fields: #{invalid_fields}" if invalid_fields.any?
+
+      # `count` and `skip` cannot be set at the same time
+      return unless count_and_skip_set?(count, skip)
+
+      raise InvalidQueryArgument, "'count' and 'skip' cannot both be set at the same time!"
+    end
+
     def build_search_string(search)
       return "" if search.empty?
 
@@ -47,6 +69,21 @@ module OpenFdaApi
       end.join("+")
 
       "search=#{value}"
+    end
+
+    def get_invalid_fields(valid_search_fields:, fields:)
+      fields.map(&:keys).flatten.select do |field|
+        if field.include?(".") # nested field (e.g. patient.patientagegroup)
+          dig_values = field.split(".").join(",properties,").split(",")
+          valid_search_fields["properties"].dig(*dig_values).nil?
+        else
+          !valid_search_fields["properties"].keys.include?(field.to_s)
+        end
+      end
+    end
+
+    def count_and_skip_set?(count, skip)
+      skip.positive? && !count.empty?
     end
   end
 end
