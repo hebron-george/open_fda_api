@@ -2,6 +2,7 @@
 
 require "net/http"
 require "json"
+require "yaml"
 require "open_fda_api/query_builder"
 
 module OpenFdaApi
@@ -25,9 +26,13 @@ module OpenFdaApi
     # @return Response from the API parsed as JSON
     def adverse_events(search_arguments: [])
       endpoint = "/event.json"
-      query    = build_query(search_arguments)
+      query    = build_query(search_arguments, self.class.valid_adverse_events_fields)
       url      = build_url(endpoint, query)
       make_request(url)
+    end
+
+    def self.valid_adverse_events_fields
+      @valid_adverse_events_fields ||= ::YAML.load_file("#{__dir__}/adverse_events_fields.yml")
     end
 
     private
@@ -36,8 +41,8 @@ module OpenFdaApi
       URI::HTTPS.build(host: @host, path: @path_base + endpoint, query: query)
     end
 
-    def build_query(search_arguments)
-      QueryBuilder.new(search: search_arguments).build_query
+    def build_query(search_arguments, valid_search_fields)
+      QueryBuilder.new(search: search_arguments, valid_search_fields: valid_search_fields).build_query
     end
 
     def make_request(url)
