@@ -10,28 +10,7 @@ RSpec.describe OpenFdaApi::QueryBuilder do
         "a" => "b",
         "c" => "d",
         "e" => "f",
-        "foo" => "hello world",
-        "atoplevelkey" => {
-          format: "int32",
-          is_exact: false,
-          type: "string",
-          pattern: nil,
-          description: "Just a fake thingy",
-          possible_values: nil
-        },
-        "someother" => {
-          type: "object",
-          properties: {
-            nestedthing: {
-              format: "int32",
-              is_exact: false,
-              type: "string",
-              pattern: nil,
-              description: "Another fake thingy, but this one is nested",
-              possible_values: nil
-            }
-          }
-        }
+        "foo" => "hello world"
       }
     }
   end
