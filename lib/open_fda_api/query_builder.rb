@@ -32,9 +32,9 @@ module OpenFdaApi
     # @param [Integer] skip
     def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0)
       validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
-      @search = build_search_string(search)
-      @sort   = build_sort_string(sort)
-      @count  = build_count_string(count)
+      @search = build_query_string(query_type: "search", query_fields: search)
+      @sort   = build_query_string(query_type: "sort",   query_fields: sort)
+      @count  = build_query_string(query_type: "count",  query_fields: count)
       @skip   = build_skip_string(skip)
     end
 
@@ -64,25 +64,10 @@ module OpenFdaApi
       raise InvalidQueryArgument, "'count' and 'skip' cannot both be set at the same time!"
     end
 
-    def build_search_string(search)
-      return "" if search.empty?
+    def build_query_string(query_type:, query_fields:)
+      return "" if query_fields.empty?
 
-      value = build_groupings(search)
-      "search=#{value}"
-    end
-
-    def build_sort_string(sort)
-      return "" if sort.empty?
-
-      value = build_groupings(sort)
-      "sort=#{value}"
-    end
-
-    def build_count_string(count)
-      return "" if count.empty?
-
-      value = build_groupings(count)
-      "count=#{value}"
+      "#{query_type}=#{build_groupings(query_fields)}"
     end
 
     def build_skip_string(skip)
