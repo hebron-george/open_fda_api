@@ -35,6 +35,7 @@ RSpec.describe OpenFdaApi::QueryBuilder do
       }
     }
   end
+
   describe "#build_query" do
     context "for search" do
       subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, search: search).build_query }
@@ -73,6 +74,38 @@ RSpec.describe OpenFdaApi::QueryBuilder do
         it "raises an error" do
           expect { build_query }.to raise_error(OpenFdaApi::InvalidQueryArgument)
         end
+      end
+    end
+
+    context "for sort" do
+      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, sort: sort).build_query }
+      let(:sort) { [{ "a" => "b" }] }
+      it "prepends with sort= correctly" do
+        expect(build_query).to eq("sort=(a:b)")
+      end
+    end
+
+    context "for count" do
+      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, count: count).build_query }
+      let(:count) { [{ "a" => "b" }] }
+      it "prepends with count= correctly" do
+        expect(build_query).to eq("count=(a:b)")
+      end
+    end
+
+    context "for skip" do
+      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, skip: skip).build_query }
+      context "when positive" do
+        let(:skip) { 1 }
+        it { is_expected.to eq("skip=1") }
+      end
+      context "when negative" do
+        let(:skip) { -1 }
+        it { is_expected.to eq("") }
+      end
+      context "when zero" do
+        let(:skip) { 0 }
+        it { is_expected.to eq("") }
       end
     end
   end

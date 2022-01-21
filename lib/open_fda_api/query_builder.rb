@@ -25,19 +25,22 @@ module OpenFdaApi
   #   Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
+    # @param [Hash] valid_search_fields
     # @param [Array<Hash>] search
+    # @param [Array<Hash>] sort
+    # @param [Array<Hash>] count
+    # @param [Integer] skip
     def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0)
       validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
       @search = build_search_string(search)
+      @sort   = build_sort_string(sort)
+      @count  = build_count_string(count)
+      @skip   = build_skip_string(skip)
     end
 
     # @return [String] the query string portion of a request
     def build_query
-      # TODO: We currently just build a very basic search string for simple examples like "search=a:b+AND+c:d",
-      # but it is possible to construct more complex queries and we will need to support that. Sorting, counting,
-      # setting limits, skipping records, pagination, converting spaces, phrase matching, grouping, and using dates and
-      # ranges are examples of more complex queries that can be built.
-      @search
+      [@search, @sort, @count, @skip].reject! { |v| v.nil? || v.empty? }.join("&")
     end
 
     private
@@ -64,11 +67,32 @@ module OpenFdaApi
     def build_search_string(search)
       return "" if search.empty?
 
-      value = search.map do |and_args|
+      value = build_groupings(search)
+      "search=#{value}"
+    end
+
+    def build_sort_string(sort)
+      return "" if sort.empty?
+
+      value = build_groupings(sort)
+      "sort=#{value}"
+    end
+
+    def build_count_string(count)
+      return "" if count.empty?
+
+      value = build_groupings(count)
+      "count=#{value}"
+    end
+
+    def build_skip_string(skip)
+      skip.positive? ? "skip=#{skip}" : ""
+    end
+
+    def build_groupings(fields)
+      fields.map do |and_args|
         "(#{and_args.map { |k, v| "#{k}:#{v.gsub(" ", "+")}" }.join("+AND+")})"
       end.join("+")
-
-      "search=#{value}"
     end
 
     def get_invalid_fields(valid_search_fields:, fields:)
