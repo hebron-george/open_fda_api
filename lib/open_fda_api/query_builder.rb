@@ -25,19 +25,22 @@ module OpenFdaApi
   #   Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
+    # @param [Hash] valid_search_fields
     # @param [Array<Hash>] search
+    # @param [Array<Hash>] sort
+    # @param [Array<Hash>] count
+    # @param [Integer] skip
     def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0)
       validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
-      @search = build_search_string(search)
+      @search = build_query_string(query_type: "search", query_fields: search)
+      @sort   = build_query_string(query_type: "sort",   query_fields: sort)
+      @count  = build_query_string(query_type: "count",  query_fields: count)
+      @skip   = build_skip_string(skip)
     end
 
     # @return [String] the query string portion of a request
     def build_query
-      # TODO: We currently just build a very basic search string for simple examples like "search=a:b+AND+c:d",
-      # but it is possible to construct more complex queries and we will need to support that. Sorting, counting,
-      # setting limits, skipping records, pagination, converting spaces, phrase matching, grouping, and using dates and
-      # ranges are examples of more complex queries that can be built.
-      @search
+      [@search, @sort, @count, @skip].reject! { |v| v.nil? || v.empty? }.join("&")
     end
 
     private
@@ -61,17 +64,24 @@ module OpenFdaApi
       raise InvalidQueryArgument, "'count' and 'skip' cannot both be set at the same time!"
     end
 
-    def build_search_string(search)
-      return "" if search.empty?
+    def build_query_string(query_type:, query_fields:)
+      return "" if query_fields.empty?
 
-      value = search.map do |and_args|
+      "#{query_type}=#{build_groupings(query_fields)}"
+    end
+
+    def build_skip_string(skip)
+      skip.positive? ? "skip=#{skip}" : ""
+    end
+
+    def build_groupings(fields)
+      fields.map do |and_args|
         "(#{and_args.map { |k, v| "#{k}:#{v.gsub(" ", "+")}" }.join("+AND+")})"
       end.join("+")
-
-      "search=#{value}"
     end
 
     def get_invalid_fields(valid_search_fields:, fields:)
+      # TODO: valid_search_fields define types and we need to check against those
       fields.map(&:keys).flatten.select do |field|
         if field.include?(".") # nested field (e.g. patient.patientagegroup)
           dig_values = field.split(".").join(",properties,").split(",")
