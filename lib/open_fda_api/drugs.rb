@@ -23,6 +23,9 @@ module OpenFdaApi
     # adverse event and medication error reports submitted to FDA.
     #
     # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param skip   [Integer]     Number of results to skip
     # @return Response from the API parsed as JSON
     def adverse_events(search: [], sort: [], count: [], skip: 0)
       endpoint = "/event.json"

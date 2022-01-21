@@ -81,6 +81,7 @@ module OpenFdaApi
     end
 
     def get_invalid_fields(valid_search_fields:, fields:)
+      # TODO: valid_search_fields define types and we need to check against those
       fields.map(&:keys).flatten.select do |field|
         if field.include?(".") # nested field (e.g. patient.patientagegroup)
           dig_values = field.split(".").join(",properties,").split(",")

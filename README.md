@@ -36,8 +36,8 @@ require 'open_fda_api'
 client = OpenFdaApi.client
 drugs_api = client.drugs
 
-search_args = [{"patient.reaction.reactionmeddrapt"=>"fatigue"}, {"occurcountry"=>"ca"}]
-drugs_api.adverse_events(search: search_args) # => {"meta" => {...}, "results" => [...]}
+search_args = [{"patient.patientweight"=>"50", "occurcountry"=>"ca"}]
+drugs_api.adverse_events(search: search_args, skip: 1) # => {"meta" => {...}, "results" => [...]}
 ```
 
 #### Device (Not Implemented Yet)
