@@ -22,11 +22,11 @@ module OpenFdaApi
     # FDA Adverse Event Reporting System (FAERS), a database that contains information on
     # adverse event and medication error reports submitted to FDA.
     #
-    # @param search_arguments [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
     # @return Response from the API parsed as JSON
-    def adverse_events(search_arguments: [])
+    def adverse_events(search: [])
       endpoint = "/event.json"
-      query    = build_query(search_arguments, self.class.valid_adverse_events_fields)
+      query    = build_query(search, self.class.valid_adverse_events_fields)
       url      = build_url(endpoint, query)
       make_request(url)
     end
@@ -41,8 +41,8 @@ module OpenFdaApi
       URI::HTTPS.build(host: @host, path: @path_base + endpoint, query: query)
     end
 
-    def build_query(search_arguments, valid_search_fields)
-      QueryBuilder.new(search: search_arguments, valid_search_fields: valid_search_fields).build_query
+    def build_query(search, valid_search_fields)
+      QueryBuilder.new(search: search, valid_search_fields: valid_search_fields).build_query
     end
 
     def make_request(url)

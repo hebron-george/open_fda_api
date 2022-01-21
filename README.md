@@ -36,14 +36,14 @@ require 'open_fda_api'
 client = OpenFdaApi.client
 drugs_api = client.drugs
 
-arguments = [{"patient.reaction.reactionmeddrapt"=>"fatigue"}, {"occurcountry"=>"ca"}]
-drugs_api.adverse_events(search_arguments: arguments) # => {"meta" => {...}, "results" => [...]}
+search_args = [{"patient.reaction.reactionmeddrapt"=>"fatigue"}, {"occurcountry"=>"ca"}]
+drugs_api.adverse_events(search: search_args) # => {"meta" => {...}, "results" => [...]}
 ```
 
-### Device (Not Implemented Yet)
-### Food (Not Implemented Yet)
-### Other (Not Implemented Yet)
-### Tobacco (Not Implemented Yet)
+#### Device (Not Implemented Yet)
+#### Food (Not Implemented Yet)
+#### Other (Not Implemented Yet)
+#### Tobacco (Not Implemented Yet)
 
 
 
