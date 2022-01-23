@@ -30,17 +30,26 @@ module OpenFdaApi
     # @param [Array<Hash>] sort
     # @param [Array<Hash>] count
     # @param [Integer] skip
-    def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0)
-      validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
+    # @param [Integer] limit
+    def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0, limit: nil)
+      # TODO: Turn validations back on once we get basic functionality working; need to flex on different field types
+      # validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
       @search = build_query_string(query_type: "search", query_fields: search)
       @sort   = build_query_string(query_type: "sort",   query_fields: sort)
       @count  = build_query_string(query_type: "count",  query_fields: count)
       @skip   = build_skip_string(skip)
+      @limit  = limit
     end
 
-    # @return [String] the query string portion of a request
+    # @return [Hash] the query string portion of a request
     def build_query
-      [@search, @sort, @count, @skip].reject! { |v| v.nil? || v.empty? }.join("&")
+      {
+        search: @search,
+        sort: @sort,
+        count: @count,
+        skip: @skip,
+        limit: @limit
+      }.compact.reject { |_k,v| v.to_s.empty? }
     end
 
     private
@@ -67,11 +76,11 @@ module OpenFdaApi
     def build_query_string(query_type:, query_fields:)
       return "" if query_fields.empty?
 
-      "#{query_type}=#{build_groupings(query_fields)}"
+      "#{build_groupings(query_fields)}"
     end
 
     def build_skip_string(skip)
-      skip.positive? ? "skip=#{skip}" : ""
+      skip.positive? ? "#{skip}" : ""
     end
 
     def build_groupings(fields)
