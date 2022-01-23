@@ -11,5 +11,8 @@ require "open_fda_api"
 # require "pry"
 # Pry.start
 
+client = OpenFdaApi.client
+puts "Client is ready: #{client}"
+
 require "irb"
 IRB.start(__FILE__)
