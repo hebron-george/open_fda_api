@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.0.7] - 2022-01-23
+- Use Faraday instead of using Net::HTTP directly
+- Introduce `QueryInputs` to group query params passed in together
+
+## [0.0.6] - 2022-01-21
+- Support for more query fields
+
 ## [0.0.5] - 2022-01-20
 - Validate, against search fields given to us from openFDA API, when building queries.
 
