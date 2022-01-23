@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     open_fda_api (0.0.6)
-      faraday
-      faraday_middleware
+      faraday (~> 1.9)
+      faraday_middleware (~> 1.2)
 
 GEM
   remote: https://rubygems.org/
