@@ -16,36 +16,63 @@ And then execute:
 bundle install
 ```
 
-## Documentation
+## Usage
 
-There are 5 main category of endpoints that openFDA API provides: Drug, Device, Food, Other, and Tobacco.
-
-Each category has further subcategories. Everything is accessible from the `OpenFdaApi.client`.
-
-
-### Drug
-
-The Drug API has the following endpoints: Adverse Events, Product Labeling, NDC Directory, Recall Enforcement Reports, and Drugs@FDA.
-
-Here's how you interact with each:
-
-#### Adverse Events
 ```ruby
-require 'open_fda_api'
-
 client = OpenFdaApi.client
-drugs_api = client.drugs
 
-search_args = [{"patient.patientweight"=>"50", "occurcountry"=>"ca"}]
-drugs_api.adverse_events(search: search_args, skip: 1) # => {"meta" => {...}, "results" => [...]}
+# First 20 results where (fieldA=foo AND fieldB=bar) OR (fieldC=baz AND fieldA exists)
+# Sorted by (fieldD) in descending order
+# Skip the first 8 results
+args = { 
+  search: [{"fieldA" => "foo", "fieldB" => "bar"}, {"fieldC" => "baz", "_exists_" => "fieldA"}],
+  sort: [{"fieldD" => "desc"}],
+  skip: 8,
+  limit: 20 
+}
+
+# Drug API
+client.drugs.adverse_events(args)
+client.drugs.product_labeling(args)
+client.drugs.ndc_directory(args)
+client.drugs.recall_enforcement_reports(args)
+client.drugs.drugs_at_fda(args)
+
+# Device API
+client.device.premarket_501ks(args)
+client.device.classification(args)
+client.device.recall_enforcement_reports(args)
+client.device.adverse_events(args)
+client.device.premarket_approval(args)
+client.device.recalls(args)
+client.device.registrations_and_listings(args)
+client.device.covid19_serological_tests(args)
+client.device.unique_device_identifier(args)
+
+# Food API
+client.food.recall_enforcement_reports(args)
+client.food.adverse_events(args)
+
+# Other API
+client.other.nsde(args)
+client.other.substance_data_reports(args)
+
+# Tobacco API
+client.tobacco.problem_reports(args)
 ```
 
-#### Device (Not Implemented Yet)
-#### Food (Not Implemented Yet)
-#### Other (Not Implemented Yet)
-#### Tobacco (Not Implemented Yet)
+### Querying
 
+The openFDA API can be queried with these arguments: `search`, `sort`, `count`, `skip`, and `limit`.
 
+`search`, `sort`, and `count` have the same format. They are arrays of hashes. Each hash has a set of fields and values
+that are ANDed together and all the elements in the array are ORed together. Here are some examples to illustrate:
+
+```ruby
+search = [{"patient.drug.openfda.pharm_class_epc" => "nonsteroidal+anti-inflammatory+drug" }]
+
+# patient.drug.openfda.pharm_class_epc:"nonsteroidal+anti-inflammatory+drug"&count=patient.reaction.reactionmeddrapt.exact
+```
 
 ## Development
 
