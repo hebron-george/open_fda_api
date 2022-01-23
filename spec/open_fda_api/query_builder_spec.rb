@@ -17,9 +17,16 @@ RSpec.describe OpenFdaApi::QueryBuilder do
 
   describe "#build_query" do
     context "for search" do
-      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, search: search).build_query }
+      subject(:build_query) do
+        described_class.new(valid_search_fields: dummy_valid_data, query_input: query_input).build_query
+      end
+
+      let(:query_input) { OpenFdaApi::QueryInputs.new(search: search) }
       context "with default" do
-        subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data).build_query }
+        subject(:build_query) do
+          described_class.new(valid_search_fields: dummy_valid_data,
+                              query_input: OpenFdaApi::QueryInputs.new).build_query
+        end
         it { is_expected.to eq({}) }
       end
 
@@ -57,7 +64,10 @@ RSpec.describe OpenFdaApi::QueryBuilder do
     end
 
     context "for sort" do
-      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, sort: sort).build_query }
+      subject(:build_query) do
+        described_class.new(valid_search_fields: dummy_valid_data, query_input: query_input).build_query
+      end
+      let(:query_input) { OpenFdaApi::QueryInputs.new(sort: sort) }
       let(:sort) { [{ "a" => "b" }] }
       it "prepends with sort= correctly" do
         expect(build_query).to eq(sort: "(a:b)")
@@ -65,7 +75,10 @@ RSpec.describe OpenFdaApi::QueryBuilder do
     end
 
     context "for count" do
-      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, count: count).build_query }
+      subject(:build_query) do
+        described_class.new(valid_search_fields: dummy_valid_data, query_input: query_input).build_query
+      end
+      let(:query_input) { OpenFdaApi::QueryInputs.new(count: count) }
       let(:count) { [{ "a" => "b" }] }
       it "prepends with count= correctly" do
         expect(build_query).to eq(count: "(a:b)")
@@ -73,7 +86,10 @@ RSpec.describe OpenFdaApi::QueryBuilder do
     end
 
     context "for skip" do
-      subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, skip: skip).build_query }
+      subject(:build_query) do
+        described_class.new(valid_search_fields: dummy_valid_data, query_input: query_input).build_query
+      end
+      let(:query_input) { OpenFdaApi::QueryInputs.new(skip: skip) }
       context "when positive" do
         let(:skip) { 1 }
         it { is_expected.to eq({ skip: "1" }) }

@@ -26,19 +26,16 @@ module OpenFdaApi
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
     # @param [Hash] valid_search_fields
-    # @param [Array<Hash>] search
-    # @param [Array<Hash>] sort
-    # @param [Array<Hash>] count
-    # @param [Integer] skip
-    # @param [Integer] limit
-    def initialize(valid_search_fields:, search: [], sort: [], count: [], skip: 0, limit: nil)
+    # @param [QueryInput] query_input
+    def initialize(query_input:, valid_search_fields:)
       # TODO: Turn validations back on once we get basic functionality working; need to flex on different field types
-      # validate_arguments!(valid_search_fields, search: search, sort: sort, count: count, skip: skip)
-      @search = build_query_string(query_type: "search", query_fields: search)
-      @sort   = build_query_string(query_type: "sort",   query_fields: sort)
-      @count  = build_query_string(query_type: "count",  query_fields: count)
-      @skip   = build_skip_string(skip)
-      @limit  = limit
+      # validate_arguments!(valid_search_fields, query_input: query_input)
+      warn "You've passed in a valid_search_fields arg but it isn't being used right now..." if valid_search_fields
+      @search = build_query_string(query_fields: query_input.search)
+      @sort   = build_query_string(query_fields: query_input.sort)
+      @count  = build_query_string(query_fields: query_input.count)
+      @skip   = build_skip_string(query_input.skip)
+      @limit  = query_input.limit
     end
 
     # @return [Hash] the query string portion of a request
@@ -54,26 +51,26 @@ module OpenFdaApi
 
     private
 
-    def validate_arguments!(valid_search_fields, search:, sort:, count:, skip:)
+    def validate_arguments!(valid_search_fields, query_input:)
       # `search` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: search)
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.search)
       raise InvalidQueryArgument, "'search' has invalid fields: #{invalid_fields}" if invalid_fields.any?
 
       # `sort` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: sort)
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.sort)
       raise InvalidQueryArgument, "'sort' has invalid fields: #{invalid_fields}" if invalid_fields.any?
 
       # `count` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: count)
+      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.count)
       raise InvalidQueryArgument, "'count' has invalid fields: #{invalid_fields}" if invalid_fields.any?
 
       # `count` and `skip` cannot be set at the same time
-      return unless count_and_skip_set?(count, skip)
+      return unless count_and_skip_set?(query_input.count, query_input.skip)
 
       raise InvalidQueryArgument, "'count' and 'skip' cannot both be set at the same time!"
     end
 
-    def build_query_string(query_type:, query_fields:)
+    def build_query_string(query_fields:)
       return "" if query_fields.empty?
 
       build_groupings(query_fields).to_s

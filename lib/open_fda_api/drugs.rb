@@ -3,6 +3,7 @@
 require "net/http"
 require "json"
 require "yaml"
+require "open_fda_api/query_inputs"
 require "open_fda_api/query_builder"
 
 module OpenFdaApi
@@ -33,7 +34,8 @@ module OpenFdaApi
     # @return Response from the API parsed as JSON
     def adverse_events(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "event.json"
-      query    = build_query(search, sort, count, skip, limit, self.class.valid_adverse_events_fields)
+      inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      query    = build_query(inputs, self.class.valid_adverse_events_fields)
       make_request(endpoint, query)
     end
 
@@ -43,9 +45,12 @@ module OpenFdaApi
 
     private
 
-    def build_query(search, sort, count, skip, limit, valid_search_fields)
-      QueryBuilder.new(search: search, sort: sort, count: count, skip: skip, limit: limit,
-                       valid_search_fields: valid_search_fields).build_query
+    def build_query(query_input, valid_search_fields)
+      QueryBuilder.new(query_input: query_input, valid_search_fields: valid_search_fields).build_query
+    end
+
+    def build_inputs(search:, sort:, count:, skip:, limit:)
+      QueryInputs.new(search: search, sort: sort, count: count, skip: skip, limit: limit)
     end
 
     def make_request(endpoint, query)
