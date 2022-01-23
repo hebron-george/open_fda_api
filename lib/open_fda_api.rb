@@ -7,7 +7,8 @@ require_relative "open_fda_api/client"
 module OpenFdaApi
   class Error < StandardError; end
 
-  def self.client(api_key: nil)
-    OpenFdaApi::Client.new(api_key: api_key)
+  # TODO: Refactor client method out, it's literally just forwarding everything...
+  def self.client(api_key: nil, adapter: Faraday.default_adapter, stubs: nil)
+    OpenFdaApi::Client.new(api_key: api_key, adapter: adapter, stubs: stubs)
   end
 end
