@@ -56,6 +56,5 @@ module OpenFdaApi
         client.connection.get(url, query)
       end.body
     end
-
   end
 end

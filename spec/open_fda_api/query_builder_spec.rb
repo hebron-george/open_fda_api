@@ -76,7 +76,7 @@ RSpec.describe OpenFdaApi::QueryBuilder do
       subject(:build_query) { described_class.new(valid_search_fields: dummy_valid_data, skip: skip).build_query }
       context "when positive" do
         let(:skip) { 1 }
-        it { is_expected.to eq({skip: "1"}) }
+        it { is_expected.to eq({ skip: "1" }) }
       end
       context "when negative" do
         let(:skip) { -1 }

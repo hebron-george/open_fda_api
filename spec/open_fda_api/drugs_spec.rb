@@ -5,8 +5,8 @@ RSpec.describe OpenFdaApi::Drugs do
   let(:client)   { OpenFdaApi.client(adapter: :test, stubs: stub) }
   let(:stub) do
     Faraday::Adapter::Test::Stubs.new do |stub|
-      stub.get("https://api.fda.gov/drug/event.json") do |env|
-        [200, {"Content-Type" => "application/json"}, File.read("spec/fixtures/drugs/adverse_events.json")]
+      stub.get("https://api.fda.gov/drug/event.json") do |_env|
+        [200, { "Content-Type" => "application/json" }, File.read("spec/fixtures/drugs/adverse_events.json")]
       end
     end
   end

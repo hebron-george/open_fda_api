@@ -49,7 +49,7 @@ module OpenFdaApi
         count: @count,
         skip: @skip,
         limit: @limit
-      }.compact.reject { |_k,v| v.to_s.empty? }
+      }.compact.reject { |_k, v| v.to_s.empty? }
     end
 
     private
@@ -76,11 +76,11 @@ module OpenFdaApi
     def build_query_string(query_type:, query_fields:)
       return "" if query_fields.empty?
 
-      "#{build_groupings(query_fields)}"
+      build_groupings(query_fields).to_s
     end
 
     def build_skip_string(skip)
-      skip.positive? ? "#{skip}" : ""
+      skip.positive? ? skip.to_s : ""
     end
 
     def build_groupings(fields)

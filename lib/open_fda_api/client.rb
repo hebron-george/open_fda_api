@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative "./drugs"
-require 'faraday'
-require 'faraday_middleware'
+require "faraday"
+require "faraday_middleware"
 
 module OpenFdaApi
   # Gives you access to the main nouns in the openFDA API
