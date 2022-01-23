@@ -1,14 +1,20 @@
 # frozen_string_literal: true
 
 RSpec.describe OpenFdaApi::Drugs do
-  let(:instance) { described_class.new }
+  let(:instance) { client.drugs }
+  let(:client)   { OpenFdaApi.client(adapter: :test, stubs: stub) }
+  let(:stub) do
+    Faraday::Adapter::Test::Stubs.new do |stub|
+      stub.get("https://api.fda.gov/drug/event.json") do |env|
+        [200, {"Content-Type" => "application/json"}, File.read("spec/fixtures/drugs/adverse_events.json")]
+      end
+    end
+  end
 
-  context "#adverse_events" do
+  context "#adverse_events API call" do
     subject(:adverse_events_call) { instance.adverse_events }
-    let(:url) { URI("https://api.fda.gov/drug/event.json?") }
-    it "makes a call to the API" do
-      expect(Net::HTTP).to receive(:get).with(url).and_return("{}")
-      adverse_events_call
+    it "converts the response to a Hash" do
+      expect(subject.class).to eq(Hash)
     end
   end
 end
