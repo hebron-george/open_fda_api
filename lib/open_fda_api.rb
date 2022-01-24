@@ -7,7 +7,8 @@ module OpenFdaApi
   class Error < StandardError; end
 
   autoload :Client, "open_fda_api/client"
-  autoload :Drugs,  "open_fda_api/drugs"
+  autoload :Endpoint, "open_fda_api/endpoint"
+  autoload :Drugs, "open_fda_api/drugs"
   autoload :QueryInputs, "open_fda_api/query_inputs"
   autoload :QueryBuilder, "open_fda_api/query_builder"
 end
