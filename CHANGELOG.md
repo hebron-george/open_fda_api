@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [0.0.8] - 2022-01-24
+- Delete the `OpenFdaApi.client` method since its only function was to forward messages
+
 ## [0.0.7] - 2022-01-23
 - Use Faraday instead of using Net::HTTP directly
 - Introduce `QueryInputs` to group query params passed in together
