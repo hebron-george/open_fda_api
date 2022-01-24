@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-21",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 128043
+    }
+  },
+  "results": [
+    {
+      "product_ndc": "80256-001",
+      "generic_name": "ALCOHOL",
+      "labeler_name": "KUZEY SAGLIK URUNLERI VE KIMYA SANAYI ANONIM SIRKETI KAZAN SUBESI",
+      "brand_name": "HEXADERMAL ANTISEPTIC HAND SANITIZER",
+      "active_ingredients": [
+        {
+          "name": "ALCOHOL",
+          "strength": ".72 mL/mL"
+        }
+      ],
+      "finished": true,
+      "packaging": [
+        {
+          "package_ndc": "80256-001-00",
+          "description": "500 mL in 1 BOTTLE (80256-001-00)",
+          "marketing_start_date": "20200731",
+          "sample": false
+        }
+      ],
+      "listing_expiration_date": "20221231",
+      "openfda": {
+        "manufacturer_name": [
+          "KUZEY SAGLIK URUNLERI VE KIMYA SANAYI ANONIM SIRKETI KAZAN SUBESI"
+        ],
+        "rxcui": [
+          "2277550"
+        ],
+        "spl_set_id": [
+          "b731a71c-b402-4f66-8283-b62a575e0431"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "3K9958V90M"
+        ]
+      },
+      "marketing_category": "OTC MONOGRAPH NOT FINAL",
+      "dosage_form": "LIQUID",
+      "spl_id": "aef56eab-5f1c-3034-e053-2995a90ae5bf",
+      "product_type": "HUMAN OTC DRUG",
+      "route": [
+        "TOPICAL"
+      ],
+      "marketing_start_date": "20200731",
+      "product_id": "80256-001_aef56eab-5f1c-3034-e053-2995a90ae5bf",
+      "application_number": "part333E",
+      "brand_name_base": "HEXADERMAL ANTISEPTIC HAND SANITIZER"
+    }
+  ]
+}

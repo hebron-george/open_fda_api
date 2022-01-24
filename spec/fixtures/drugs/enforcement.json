@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-19",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 13428
+    }
+  },
+  "results": [
+    {
+      "country": "United States",
+      "city": "Peoria",
+      "address_1": "4625 N University St",
+      "reason_for_recall": "Lack of Assurance of Sterility:  A recall of all compounded sterile preparations within expiry is being initiated due to observations associated with poor sterile production practices resulting in a lack of sterility assurance for their finished drugs.",
+      "address_2": "",
+      "product_quantity": "1 vial",
+      "code_info": "Lot #: 072915, Exp 10/29/2015",
+      "center_classification_date": "20151117",
+      "distribution_pattern": "Nationwide",
+      "state": "IL",
+      "product_description": "Progesterone 100 mg/mL in Corn Oil Injection, 2 mL vials, Rx only, Essential Wellness PHARMACY, 4625 N. University, Peoria, IL 61614.",
+      "report_date": "20151125",
+      "classification": "Class II",
+      "openfda": {},
+      "recalling_firm": "Kalman Health & Wellness, Inc. dba Essential Wellness Pharma",
+      "recall_number": "D-321-2016",
+      "initial_firm_notification": "Letter",
+      "product_type": "Drugs",
+      "event_id": "72241",
+      "termination_date": "20171229",
+      "recall_initiation_date": "20150903",
+      "postal_code": "61614-5828",
+      "voluntary_mandated": "Voluntary: Firm initiated",
+      "status": "Terminated"
+    }
+  ]
+}

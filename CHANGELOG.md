@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.0.9] - 2022-01-24
+- Filled out the following Drug endpoints:
+  - product_labeling
+  - ndc_directory
+  - recall_enforcement_reports
+  - drugs_at_fda
+
 ## [0.0.8] - 2022-01-24
 - Delete the `OpenFdaApi.client` method since its only function was to forward messages
 
