@@ -20,10 +20,6 @@ module OpenFdaApi
       @path_base = "/drug"
     end
 
-    # The openFDA drug adverse event API returns data that has been collected from the
-    # FDA Adverse Event Reporting System (FAERS), a database that contains information on
-    # adverse event and medication error reports submitted to FDA.
-    #
     # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
     # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
     # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
@@ -34,6 +30,58 @@ module OpenFdaApi
       endpoint = "event.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
       query    = build_query(inputs, self.class.valid_adverse_events_fields)
+      make_request(endpoint, query)
+    end
+
+    # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param skip   [Integer]     Number of results to skip
+    # @param limit  [Integer]     Number of results to return
+    # @return Response from the API parsed as JSON
+    def product_labeling(search: [], sort: [], count: [], skip: 0, limit: 1)
+      endpoint = "label.json"
+      inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      make_request(endpoint, query)
+    end
+
+    # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param skip   [Integer]     Number of results to skip
+    # @param limit  [Integer]     Number of results to return
+    # @return Response from the API parsed as JSON
+    def ndc_directory(search: [], sort: [], count: [], skip: 0, limit: 1)
+      endpoint = "ndc.json"
+      inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      make_request(endpoint, query)
+    end
+
+    # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param skip   [Integer]     Number of results to skip
+    # @param limit  [Integer]     Number of results to return
+    # @return Response from the API parsed as JSON
+    def recall_enforcement_reports(search: [], sort: [], count: [], skip: 0, limit: 1)
+      endpoint = "enforcement.json"
+      inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      make_request(endpoint, query)
+    end
+
+    # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
+    # @param skip   [Integer]     Number of results to skip
+    # @param limit  [Integer]     Number of results to return
+    # @return Response from the API parsed as JSON
+    def drugs_at_fda(search: [], sort: [], count: [], skip: 0, limit: 1)
+      endpoint = "drugsfda.json"
+      inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      query    = build_query(inputs, {}) # TODO: Upload valid fields
       make_request(endpoint, query)
     end
 

@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-18",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 25329
+    }
+  },
+  "results": [
+    {
+      "submissions": [
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "7",
+          "submission_status": "AP",
+          "submission_status_date": "19880527",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        },
+        {
+          "submission_type": "ORIG",
+          "submission_number": "1",
+          "submission_status": "AP",
+          "submission_status_date": "19820429"
+        },
+        {
+          "submission_type": "SUPPL",
+          "submission_number": "10",
+          "submission_status": "AP",
+          "submission_status_date": "19911018",
+          "submission_class_code": "LABELING",
+          "submission_class_code_description": "Labeling"
+        }
+      ],
+      "application_number": "ANDA087203",
+      "sponsor_name": "ALPHARMA US PHARMS",
+      "products": [
+        {
+          "product_number": "001",
+          "reference_drug": "No",
+          "brand_name": "FLURANDRENOLIDE",
+          "active_ingredients": [
+            {
+              "name": "FLURANDRENOLIDE",
+              "strength": "0.05%"
+            }
+          ],
+          "reference_standard": "No",
+          "dosage_form": "LOTION",
+          "route": "TOPICAL",
+          "marketing_status": "Discontinued"
+        }
+      ]
+    }
+  ]
+}
