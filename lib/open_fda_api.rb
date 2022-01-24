@@ -12,6 +12,7 @@ module OpenFdaApi
   autoload :Drugs, "open_fda_api/drugs"
   autoload :Device, "open_fda_api/device"
   autoload :Food, "open_fda_api/food"
+  autoload :Tobacco, "open_fda_api/tobacco"
   autoload :QueryInputs, "open_fda_api/query_inputs"
   autoload :QueryBuilder, "open_fda_api/query_builder"
 end
