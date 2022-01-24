@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.0.12] - 2022-01-24
+- Animal & Veterinary Endpoint
+- Tobacco Endpoint
+- Other Endpoint
+
 ## [0.0.11] - 2022-01-24
 - Include Food endpoints
 
