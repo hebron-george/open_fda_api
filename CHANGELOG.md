@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [0.0.11] - 2022-01-24
+- Include Food endpoints
+
 ## [0.0.10] - 2022-01-24
 - Include Device endpoints
 - Pull out Endpoint common behavior to a base class

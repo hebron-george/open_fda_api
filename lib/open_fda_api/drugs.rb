@@ -4,7 +4,7 @@ require "yaml"
 
 module OpenFdaApi
   # Interact with the Drugs API Endpoint:
-  # - Adverse Events
+  #  - Adverse Events
   #  - Product Labeling
   #  - NDC Directory
   #  - Recall Enforcement Reports
