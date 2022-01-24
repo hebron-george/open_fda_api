@@ -7,7 +7,6 @@ module OpenFdaApi
 
     def initialize(client)
       @client = client
-      @host = "api.fda.gov"
     end
 
     def build_query(query_input, valid_search_fields)
