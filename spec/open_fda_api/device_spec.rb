@@ -32,15 +32,15 @@ RSpec.describe OpenFdaApi::Device do
     end
   end
 
-  context "#premarket_501ks API call" do
+  context "#premarket_510ks API call" do
     let(:stub) do
       Faraday::Adapter::Test::Stubs.new do |stub|
-        stub.get("https://api.fda.gov/device/501k.json") do |_env|
-          [200, { "Content-Type" => "application/json" }, File.read("spec/fixtures/device/501k.json")]
+        stub.get("https://api.fda.gov/device/510k.json") do |_env|
+          [200, { "Content-Type" => "application/json" }, File.read("spec/fixtures/device/510k.json")]
         end
       end
     end
-    subject(:premarket_501ks_call) { instance.premarket_501ks }
+    subject(:premarket_510ks_call) { instance.premarket_510ks }
     it "converts the response to a Hash" do
       expect(subject.class).to eq(Hash)
     end

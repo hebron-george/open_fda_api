@@ -31,6 +31,9 @@ args = {
   limit: 20 
 }
 
+# Animal & Veterinary API
+client.animal_and_veterinary.adverse_events(args)
+
 # Drug API
 client.drugs.adverse_events(args)
 client.drugs.product_labeling(args)
