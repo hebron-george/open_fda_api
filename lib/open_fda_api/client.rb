@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "./drugs"
 require "faraday"
 require "faraday_middleware"
 
