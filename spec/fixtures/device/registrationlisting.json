@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-17",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 314647
+    }
+  },
+  "results": [
+    {
+      "proprietary_name": [
+        "SONICAID ONE"
+      ],
+      "establishment_type": [
+        "Complaint File Establishment per 21 CFR 820.198",
+        "Manufacture Medical Device"
+      ],
+      "registration": {
+        "registration_number": "1000589001",
+        "fei_number": "1000589001",
+        "status_code": "1",
+        "initial_importer_flag": "N",
+        "reg_expiry_date_year": "2022",
+        "name": "HUNTLEIGH HEALTHCARE LTD.",
+        "address_line_1": "DIAGNOSTIC PRODUCT DIVISION",
+        "address_line_2": "35 PORTMANMOOR ROAD",
+        "city": "CARDIFF, SOUTH GLAMORGAN",
+        "state_code": "",
+        "iso_country_code": "GB",
+        "zip_code": "",
+        "postal_code": "CF24 5HN",
+        "us_agent": {
+          "name": "Darren Demerritt",
+          "business_name": "Arjo Inc",
+          "bus_phone_area_code": "425",
+          "bus_phone_num": "3089587",
+          "bus_phone_extn": "",
+          "fax_area_code": "",
+          "fax_num": "",
+          "email_address": "darren.demerritt@arjo.com",
+          "address_line_1": "2349 W Lake St",
+          "address_line_2": "#250",
+          "city": "Addison",
+          "state_code": "IL",
+          "iso_country_code": "US",
+          "zip_code": "60101",
+          "postal_code": ""
+        },
+        "owner_operator": {
+          "firm_name": "ARJOHUNTLEIGH AB",
+          "owner_operator_number": "8010077",
+          "official_correspondent": {},
+          "contact_address": {
+            "address_1": "Hans Michelsensgatan 10",
+            "address_2": "",
+            "city": "Malmo",
+            "state_code": "SE-M",
+            "state_province": "Skane",
+            "iso_country_code": "SE",
+            "postal_code": "211 20"
+          }
+        }
+      },
+      "pma_number": "",
+      "k_number": "K023618",
+      "products": [
+        {
+          "product_code": "HGL",
+          "created_date": "2008-03-12",
+          "owner_operator_number": "8010077",
+          "exempt": "",
+          "openfda": {
+            "device_name": "Transducer, Ultrasonic, Obstetric",
+            "medical_specialty_description": "Obstetrics/Gynecology",
+            "regulation_number": "884.2960",
+            "device_class": "2"
+          }
+        },
+        {
+          "product_code": "HGM",
+          "created_date": "2008-03-12",
+          "owner_operator_number": "8010077",
+          "exempt": "",
+          "openfda": {
+            "device_name": "System, Monitoring, Perinatal",
+            "medical_specialty_description": "Obstetrics/Gynecology",
+            "regulation_number": "884.2740",
+            "device_class": "2"
+          }
+        }
+      ]
+    }
+  ]
+}

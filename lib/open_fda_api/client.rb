@@ -20,6 +20,10 @@ module OpenFdaApi
       OpenFdaApi::Drugs.new(self)
     end
 
+    def device
+      OpenFdaApi::Device.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json

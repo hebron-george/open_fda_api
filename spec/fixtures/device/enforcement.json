@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-19",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 26953
+    }
+  },
+  "results": [
+    {
+      "country": "Switzerland",
+      "city": "Winterthur",
+      "address_1": "Sulzerallee 8",
+      "reason_for_recall": "An investigation identified that the products were possibly manufactured from a different material than defined in the applicable specifications.",
+      "address_2": "",
+      "product_quantity": "",
+      "code_info": "All items marked with \"Normed\" are affected",
+      "center_classification_date": "20190523",
+      "distribution_pattern": "The products were distributed to the following US states:  AL, AR, AZ, CA, CO, FL, GA, HI, IA, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, SC, TN, TX, UT, VA, WA, WI, WV, and WY.",
+      "state": "",
+      "product_description": "V-TEK\", IVP step drill 2.5-3.9x124mm, 16mm stop, contra-angle, Item Number 502015637",
+      "report_date": "20190529",
+      "classification": "Class II",
+      "openfda": {},
+      "recalling_firm": "Zimmer GmbH",
+      "recall_number": "Z-1448-2019",
+      "initial_firm_notification": "Letter",
+      "product_type": "Devices",
+      "event_id": "82642",
+      "termination_date": "20200511",
+      "recall_initiation_date": "20190408",
+      "postal_code": "",
+      "voluntary_mandated": "Voluntary: Firm initiated",
+      "status": "Terminated"
+    }
+  ]
+}

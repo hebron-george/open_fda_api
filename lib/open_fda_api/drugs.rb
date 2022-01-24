@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "net/http"
-require "json"
 require "yaml"
 
 module OpenFdaApi
@@ -11,15 +9,7 @@ module OpenFdaApi
   #  - NDC Directory
   #  - Recall Enforcement Reports
   #  - Drugs@FDA)
-  class Drugs
-    attr_reader :client, :path_base
-
-    def initialize(client)
-      @client = client
-      @host = "api.fda.gov"
-      @path_base = "/drug"
-    end
-
+  class Drugs < Endpoint
     # @param search [Array<Hash>] Search fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
     # @param sort   [Array<Hash>] Sort fields defined in https://open.fda.gov/apis/drug/event/searchable-fields/
     # @param count  [Array<Hash>] Count fields defined https://open.fda.gov/apis/drug/event/searchable-fields/
@@ -91,21 +81,8 @@ module OpenFdaApi
 
     private
 
-    def build_query(query_input, valid_search_fields)
-      QueryBuilder.new(query_input: query_input, valid_search_fields: valid_search_fields).build_query
-    end
-
-    def build_inputs(search:, sort:, count:, skip:, limit:)
-      QueryInputs.new(search: search, sort: sort, count: count, skip: skip, limit: limit)
-    end
-
-    def make_request(endpoint, query)
-      url = "#{path_base}/#{endpoint}"
-      if query.empty?
-        client.connection.get(url)
-      else
-        client.connection.get(url, query)
-      end.body
+    def endpoint_path
+      "/drug"
     end
   end
 end

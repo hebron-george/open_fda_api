@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.0.10] - 2022-01-24
+- Include Device endpoints
+- Pull out Endpoint common behavior to a base class
+
 ## [0.0.9] - 2022-01-24
 - Filled out the following Drug endpoints:
   - product_labeling
