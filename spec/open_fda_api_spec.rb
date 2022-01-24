@@ -7,12 +7,12 @@ RSpec.describe OpenFdaApi do
 
   describe ".client" do
     context "with an api key" do
-      subject(:client) { OpenFdaApi.client(api_key: "gibberish") }
+      subject(:client) { OpenFdaApi::Client.new(api_key: "gibberish") }
       it { expect { client }.to_not raise_error }
     end
 
     context "without an api key" do
-      subject(:client) { OpenFdaApi.client }
+      subject(:client) { OpenFdaApi::Client.new }
       it { expect { client }.to_not raise_error }
     end
   end

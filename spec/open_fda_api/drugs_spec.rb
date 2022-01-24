@@ -2,7 +2,7 @@
 
 RSpec.describe OpenFdaApi::Drugs do
   let(:instance) { client.drugs }
-  let(:client)   { OpenFdaApi.client(adapter: :test, stubs: stub) }
+  let(:client)   { OpenFdaApi::Client.new(adapter: :test, stubs: stub) }
   let(:stub) do
     Faraday::Adapter::Test::Stubs.new do |stub|
       stub.get("https://api.fda.gov/drug/event.json") do |_env|
