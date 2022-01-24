@@ -24,6 +24,10 @@ module OpenFdaApi
       OpenFdaApi::Device.new(self)
     end
 
+    def food
+      OpenFdaApi::Food.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json
