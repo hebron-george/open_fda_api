@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-04",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 3198439
+    }
+  },
+  "results": [
+    {
+      "has_donation_id_number": "false",
+      "mri_safety": "Labeling does not contain MRI Safety Information",
+      "record_status": "Published",
+      "is_labeled_as_nrl": "false",
+      "is_rx": "true",
+      "commercial_distribution_status": "In Commercial Distribution",
+      "device_description": "4.5 x 30mm Polyaxial-Non-Reduction Screw Set incl. Set Screw",
+      "public_device_record_key": "9eb696f8-eafc-461e-8354-b336d3f7e6f3",
+      "has_serial_number": "false",
+      "public_version_date": "2020-04-21",
+      "sterilization": {
+        "is_sterile": "true",
+        "is_sterilization_prior_use": "false"
+      },
+      "is_direct_marking_exempt": "false",
+      "public_version_number": "1",
+      "labeler_duns_number": "040985864",
+      "is_labeled_as_no_nrl": "false",
+      "identifiers": [
+        {
+          "id": "00810005110402",
+          "type": "Primary",
+          "issuing_agency": "GS1"
+        }
+      ],
+      "is_single_use": "true",
+      "is_otc": "false",
+      "version_or_model_number": "PNR45030.S11",
+      "has_manufacturing_date": "true",
+      "brand_name": "OrthoCircle Spine Pedicle Screw System",
+      "is_combination_product": "false",
+      "is_kit": "false",
+      "product_codes": [
+        {
+          "code": "NKB",
+          "name": "Thoracolumbosacral Pedicle Screw System",
+          "openfda": {
+            "device_name": "Thoracolumbosacral Pedicle Screw System",
+            "medical_specialty_description": "Orthopedic",
+            "regulation_number": "888.3070",
+            "device_class": "2"
+          }
+        }
+      ],
+      "device_count_in_base_package": "1",
+      "is_pm_exempt": "false",
+      "has_lot_or_batch_number": "true",
+      "company_name": "OrthoCircle Spine",
+      "public_version_status": "New",
+      "has_expiration_date": "true",
+      "is_hct_p": "false",
+      "gmdn_terms": [
+        {
+          "name": "Bone-screw internal spinal fixation system, sterile",
+          "definition": "An assembly of sterile implantable devices intended to provide immobilization and stabilization of spinal segments in the treatment of various spinal instabilities or deformities, also used as an adjunct to spinal fusion [e.g., for degenerative disc disease (DDD)]. Otherwise known as a pedicle screw instrumentation system, it typically consists of a combination of anchors (e.g., bolts, hooks, pedicle screws or other types), interconnection mechanisms (incorporating nuts, screws, sleeves, or bolts), longitudinal members (e.g., plates, rods, plate/rod combinations), and/or transverse connectors. Sterile disposable devices associated with implantation may be included."
+        }
+      ],
+      "publish_date": "2020-04-13"
+    }
+  ]
+}

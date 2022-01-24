@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2021-11-29",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 12540
+    }
+  },
+  "results": [
+    {
+      "igg_agree": "TN",
+      "sample_id": "C0182",
+      "igm_result": "Negative",
+      "pan_titer": "0",
+      "type": "Plasma",
+      "lot_number": "S2AB200914",
+      "igm_igg_agree": "NA",
+      "manufacturer": "Vincitek LLC",
+      "antibody_truth": "Negative",
+      "pan_agree": "NA",
+      "panel": "Panel 3",
+      "igm_truth": "Negative",
+      "date_performed": "10/29/2020",
+      "group": "HIV+",
+      "days_from_symptom": "NA",
+      "evaluation_id": "maf3394-a001",
+      "sample_no": "20",
+      "igm_iga_result": "NA",
+      "igm_iga_agree": "NA",
+      "antibody_agree": "TN",
+      "igm_agree": "TN",
+      "control": "Pass",
+      "igg_titer": "0",
+      "igm_igg_result": "NA",
+      "igg_result": "Negative",
+      "iga_result": "NA",
+      "pan_result": "NA",
+      "igg_truth": "Negative",
+      "iga_agree": "NA",
+      "device": "Vincitek S2-AB Test Card",
+      "igm_titer": "0"
+    }
+  ]
+}

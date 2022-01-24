@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-18",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 12814703
+    }
+  },
+  "results": [
+    {
+      "manufacturer_contact_zip_ext": "",
+      "manufacturer_g1_address_2": "",
+      "event_location": "HOSPITAL",
+      "report_to_fda": "Y",
+      "manufacturer_contact_t_name": "",
+      "manufacturer_contact_state": "",
+      "manufacturer_link_flag": "N",
+      "manufacturer_contact_address_2": "",
+      "manufacturer_g1_city": "",
+      "manufacturer_contact_address_1": "",
+      "manufacturer_contact_pcity": "",
+      "event_type": "Injury",
+      "report_number": "10",
+      "type_of_report": [
+        "Initial submission"
+      ],
+      "product_problem_flag": "N",
+      "date_received": "19920310",
+      "manufacturer_address_2": "",
+      "pma_pmn_number": "",
+      "date_of_event": "19920220",
+      "reprocessed_and_reused_flag": "",
+      "manufacturer_address_1": "",
+      "report_date": "19920221",
+      "exemption_number": "",
+      "manufacturer_contact_zip_code": "",
+      "reporter_occupation_code": "",
+      "manufacturer_contact_plocal": "",
+      "manufacturer_contact_l_name": "",
+      "source_type": [
+        ""
+      ],
+      "distributor_zip_code_ext": "",
+      "manufacturer_g1_postal_code": "",
+      "date_facility_aware": "19920220",
+      "manufacturer_g1_state": "",
+      "reporter_country_code": "",
+      "manufacturer_contact_area_code": "",
+      "date_added": "19920319",
+      "manufacturer_contact_f_name": "",
+      "previous_use_code": "",
+      "device": [
+        {
+          "device_event_key": "8",
+          "implant_flag": "N",
+          "date_removed_flag": "",
+          "device_sequence_number": "1",
+          "date_received": "19920310",
+          "brand_name": "N/A",
+          "generic_name": "MANUAL HOSPITAL BED",
+          "manufacturer_d_name": "SCI-O-TECH/GOODMAN",
+          "manufacturer_d_address_1": "",
+          "manufacturer_d_address_2": "",
+          "manufacturer_d_city": "",
+          "manufacturer_d_state": "",
+          "manufacturer_d_zip_code": "",
+          "manufacturer_d_zip_code_ext": "",
+          "manufacturer_d_country": "",
+          "manufacturer_d_postal_code": "",
+          "model_number": "720",
+          "catalog_number": "N/A",
+          "lot_number": "N/A",
+          "other_id_number": "N/A",
+          "device_operator": "OTHER CAREGIVERS",
+          "device_availability": "Yes",
+          "device_report_product_code": "FNJ",
+          "device_age_text": "",
+          "device_evaluated_by_manufacturer": "",
+          "baseline_510_k__flag": "",
+          "baseline_510_k__number": "",
+          "baseline_510_k__exempt_flag": "",
+          "openfda": {
+            "device_name": "Bed, Manual",
+            "medical_specialty_description": "General Hospital",
+            "regulation_number": "880.5120",
+            "device_class": "1"
+          }
+        }
+      ],
+      "manufacturer_zip_code": "",
+      "manufacturer_contact_country": "",
+      "date_changed": "20200623",
+      "health_professional": "",
+      "summary_report_flag": "N",
+      "manufacturer_g1_zip_code_ext": "",
+      "manufacturer_contact_extension": "",
+      "manufacturer_city": "",
+      "manufacturer_contact_phone_number": "",
+      "patient": [
+        {
+          "patient_sequence_number": "1",
+          "date_received": "19920310",
+          "sequence_number_treatment": [
+            ""
+          ],
+          "sequence_number_outcome": [
+            "1. R"
+          ]
+        }
+      ],
+      "distributor_city": "",
+      "date_report": "19920221",
+      "initial_report_to_fda": "",
+      "distributor_state": "",
+      "event_key": "",
+      "manufacturer_g1_country": "",
+      "manufacturer_contact_city": "",
+      "mdr_report_key": "10",
+      "removal_correction_number": "",
+      "number_devices_in_event": "",
+      "date_report_to_fda": "19920221",
+      "manufacturer_name": "",
+      "report_source_code": "User Facility report",
+      "remedial_action": [
+        ""
+      ],
+      "manufacturer_g1_zip_code": "",
+      "report_to_manufacturer": "",
+      "manufacturer_zip_code_ext": "",
+      "manufacturer_g1_name": "",
+      "adverse_event_flag": "Y",
+      "distributor_address_1": "",
+      "manufacturer_state": "",
+      "distributor_address_2": "",
+      "manufacturer_postal_code": "",
+      "single_use_flag": "",
+      "manufacturer_country": "",
+      "mdr_text": [
+        {
+          "mdr_text_key": "3",
+          "text_type_code": "Description of Event or Problem",
+          "patient_sequence_number": "1",
+          "text": "RESIDENT WAS IN BED WITH BOTH SIDERAILS IN \"UP\" POSITION.  NURSING ASSISTANT HEARD A NOISE AND WENT INTO RESIDENT'S ROOM.  RESIDENT WAS LYING ON THE FLOOR WITH LEFT ARM STUCK BETWEEN THE MATRESS FRAME AND SIDERAIL;  RESIDENT WAS SENT TO HOSPITAL AND RECEIVED TREATMENT FOR BROKEN ARM.  SIDERAIL WAS EVALUATED IN \"UP\" POSITION - SIDERAIL LOCK IS IN WORKING ORDERDEVICE LABELED FOR SINGLE USE.  PATIENT MEDICAL STATUS PRIOR TO EVENT:  FAIR CONDITION.  THERE WAS NOT MULTIPLE PATIENT INVOLVEMENT.INVALID DATA - ON DEVICE SERVICE/MAINTENANCE.  NO DATA - REGARDING DATE LAST SERVICED.  SERVICE PROVIDED BY:  INVALID DATA.  INVALID DATA - SERVICE RECORDS AVAILABILITY.  NO IMMINENT HAZARD TO PUBLIC HEALTH CLAIMED.  DEVICE USED AS LABELED/INTENDED.DEVICE WAS EVALUATED AFTER THE EVENT.  METHOD OF EVALUATION:  ACTUAL DEVICE INVOLVED IN INCIDENT WAS EVALUATED, PERFORMANCE TESTS PERFORMED, VISUAL EXAMINATION.  RESULTS OF EVALUATION:  STORAGE/SHIPMENT, NONE OR UNKNOWN, OTHER.  CONCLUSION:  NO FAILURE DETECTED AND PRODUCT WITHIN SPECIFICATION.  CERTAINTY OF DEVICE AS CAUSE OF OR CONTRIBUTOR TO EVENT:  YES.  CORRECTIVE ACTIONS:  DEVICE USE CONTINUED WITH RESTRICTIONS/LIMITATIONS, INVALID DATA.  INVALID DATA - ON DEVICE DESTROYED/DISPOSED OF STATUS."
+        }
+      ],
+      "number_patients_in_event": "",
+      "distributor_name": "",
+      "manufacturer_g1_address_1": "",
+      "distributor_zip_code": "",
+      "manufacturer_contact_postal_code": "",
+      "manufacturer_contact_exchange": "",
+      "manufacturer_contact_pcountry": ""
+    }
+  ]
+}

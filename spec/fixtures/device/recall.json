@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-23",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 46157
+    }
+  },
+  "results": [
+    {
+      "cfres_id": "30043",
+      "product_res_number": "Z-0001-04",
+      "event_date_initiated": "2003-10-27",
+      "event_date_posted": "2003-10-29",
+      "recall_status": "Terminated",
+      "event_date_terminated": "2004-03-24",
+      "res_event_number": "27549",
+      "product_code": "IZL--",
+      "k_numbers": [
+        "K020436"
+      ],
+      "product_description": "Sedecal SP-HF 4.0 Portable X-Ray System; Manufactured by SEDECAL, C/Pelya 9 Pol. Ind. Rio De Janeiro, 28110 Algete (Madrid) Spain",
+      "code_info": "serial #PK10058",
+      "recalling_firm": "Sedecal USA, Inc",
+      "address_1": "2910 N Arlington Heights Rd",
+      "city": "Arlington Heights",
+      "state": "IL",
+      "postal_code": "60004-1551",
+      "additional_info_contact": "Mr. Devan Moser \n847-394-6960",
+      "reason_for_recall": "A minimum source-skin-distance of less than 30 cm and not identifying the tube manufacturer on the tube housing label resulted in the SP-HF-4.0 Portable Systems not complying with the U.S. Federal performance standard.",
+      "root_cause_description": "Other",
+      "action": "An 'Important Safety Notice' dated 10/27/03 was sent to the one direct account on the same date, informing them of the non-compliances with the performance standard and requesting them to call Sedecal at 800-920-9525 to arrange for the modification of the x-ray unit at no cost to the user.",
+      "product_quantity": "1 unit",
+      "distribution_pattern": "Vermont",
+      "openfda": {}
+    }
+  ]
+}
