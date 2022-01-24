@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-19",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 131344
+    }
+  },
+  "results": [
+    {
+      "codes": [
+        {
+          "uuid": "1bbd623e-da7e-4d9f-8dfe-6aca028a8a52",
+          "code": "584-10-1",
+          "type": "PRIMARY",
+          "url": "https://chem.nlm.nih.gov/chemidplus/rn/584-10-1",
+          "code_system": "CAS",
+          "references": [
+            "5c241589-388d-4116-9355-aa10b04991f3",
+            "f577b6b4-e144-4ff7-a255-39ff60a1166b"
+          ]
+        },
+        {
+          "uuid": "632c33b4-dde7-41f0-b7a1-e8f4c3162498",
+          "code": "209-531-4",
+          "type": "PRIMARY",
+          "url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.008.667",
+          "code_system": "ECHA (EC/EINECS)",
+          "references": [
+            "5c241589-388d-4116-9355-aa10b04991f3"
+          ]
+        },
+        {
+          "uuid": "2553f9c5-8b64-4d27-a30a-429899208f4b",
+          "code": "M9080",
+          "comments": "Merck Index",
+          "type": "PRIMARY",
+          "url": "https://www.rsc.org/Merck-Index/monograph/M9080?q=authorize",
+          "code_system": "MERCK INDEX",
+          "references": [
+            "5c241589-388d-4116-9355-aa10b04991f3"
+          ]
+        },
+        {
+          "uuid": "439456a5-56db-481a-a32d-e138ccce2cc7",
+          "code": "VQQ1LG370N",
+          "type": "PRIMARY",
+          "code_system": "FDA UNII"
+        },
+        {
+          "uuid": "6142532a-f4b7-7490-8927-ad83ce37a3ed",
+          "code": "11084580",
+          "type": "PRIMARY",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11084580",
+          "code_system": "PUBCHEM",
+          "references": [
+            "b01b6b7b-6129-d539-bb58-8f7ae5291fa1"
+          ]
+        }
+      ],
+      "substance_class": "chemical",
+      "names": [
+        {
+          "uuid": "cabbf5c3-ba76-6b4b-69c5-22a1d38c2397",
+          "name": "NSC-46325",
+          "type": "cd",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "57ad15d5-1ff5-7945-bc70-225d6496c9fa"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "cc42bc8e-a818-46b7-ab68-aab519dc6488",
+          "name": "POTASSIUM THIOCARBONATE (K2CS3)",
+          "type": "cn",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "1f4995f0-fa53-4958-a6ac-5db0ff8cf5b4",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "8e8ebc3a-cba2-46a4-b41e-2c7912942801",
+          "name": "DIPOTASSIUM TRITHIOCARBONATE",
+          "type": "sys",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "1f4995f0-fa53-4958-a6ac-5db0ff8cf5b4",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "eb235ff6-09b2-41b5-9b3c-e399fe34edad",
+          "name": "POTASSIUM SULFOCARBONATE",
+          "type": "sys",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "25836dc3-fc59-41d1-baef-d6fbc4387db1",
+          "name": "CARBONOTRITHIOIC ACID DIPOTASSIUM SALT",
+          "type": "cn",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "8bcf8be8-f5c6-4a6f-af7e-4c51a03035a5",
+          "name": "POTASSIUM TRITHIOCARBONATE",
+          "type": "sys",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+            "ed381f5e-5c95-4e0e-8b66-9638c81da887",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": true
+        },
+        {
+          "uuid": "2bb1ed6d-9184-4d04-b539-930e1f867fd0",
+          "name": "POTASSIUM TRITHIOCARBONATE [MI]",
+          "type": "cn",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        },
+        {
+          "uuid": "a0444b84-20a5-4f71-a01b-f30b6da6ede9",
+          "name": "POTASSIUM THIOCARBONATE",
+          "type": "sys",
+          "languages": [
+            "en"
+          ],
+          "preferred": false,
+          "references": [
+            "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+            "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199"
+          ],
+          "display_name": false
+        }
+      ],
+      "references": [
+        {
+          "uuid": "c7e4ec4c-1851-4f3e-b1df-82715312457d",
+          "citation": "MERCK",
+          "doc_type": "SRS",
+          "public_domain": true,
+          "tags": [
+            "NOMEN",
+            "PUBLIC_DOMAIN_RELEASE",
+            "AUTO_SELECTED"
+          ]
+        },
+        {
+          "uuid": "4f6b9a8b-f5ee-41f4-b8cf-b536d7502199",
+          "citation": "MERCK INDEX",
+          "doc_type": "MERCK INDEX",
+          "public_domain": true,
+          "tags": [
+            "NOMEN"
+          ]
+        },
+        {
+          "uuid": "1f4995f0-fa53-4958-a6ac-5db0ff8cf5b4",
+          "citation": "STN",
+          "doc_type": "SRS",
+          "public_domain": true,
+          "tags": [
+            "NOMEN"
+          ]
+        },
+        {
+          "uuid": "5c241589-388d-4116-9355-aa10b04991f3",
+          "citation": "SRS CODE IMPORT",
+          "doc_type": "SRS",
+          "public_domain": true,
+          "document_date": 1493391703000,
+          "tags": [
+            "NOMEN"
+          ]
+        },
+        {
+          "uuid": "93a9c2d5-92ba-4461-9530-a80fceab8bce",
+          "citation": "SRS import [VQQ1LG370N]",
+          "url": "http://fdasis.nlm.nih.gov/srs/srsdirect.jsp?regno=VQQ1LG370N",
+          "doc_type": "SRS",
+          "public_domain": true,
+          "document_date": 1493391703000,
+          "tags": [
+            "NOMEN"
+          ]
+        },
+        {
+          "uuid": "e3c75aa1-7c89-4fd7-ab27-4ca598c68709",
+          "citation": "CHEMID RECORD 26750-66-3",
+          "doc_type": "SRS",
+          "public_domain": true,
+          "tags": [
+            "NOMEN"
+          ]
+        },
+        {
+          "uuid": "ed381f5e-5c95-4e0e-8b66-9638c81da887",
+          "citation": "POTASSIUM TRITHIOCARBONATE [MI]",
+          "doc_type": "SRS_LOCATOR",
+          "public_domain": true
+        },
+        {
+          "uuid": "57ad15d5-1ff5-7945-bc70-225d6496c9fa",
+          "citation": "NCI",
+          "doc_type": "NCI DRUG DICTIONARY",
+          "public_domain": true
+        },
+        {
+          "uuid": "f577b6b4-e144-4ff7-a255-39ff60a1166b",
+          "citation": "STN",
+          "doc_type": "STN (SCIFINDER)",
+          "public_domain": true
+        },
+        {
+          "uuid": "b01b6b7b-6129-d539-bb58-8f7ae5291fa1",
+          "citation": "PUBCHEM",
+          "doc_type": "PUBCHEM",
+          "public_domain": true
+        }
+      ],
+      "definition_type": "PRIMARY",
+      "moieties": [
+        {
+          "uuid": "5b96ebc8-552b-48d9-853e-728be5c9eaae",
+          "id": "5b96ebc8-552b-48d9-853e-728be5c9eaae",
+          "molfile": "\n  Marvin  01132104452D          \n\n  1  0  0  0  0  0            999 V2000\n    7.3876   -5.7565    0.0000 K   0  3  0  0  0  0  0  0  0  0  0  0\nM  CHG  1   1   1\nM  END",
+          "smiles": "[K+]",
+          "formula": "K",
+          "atropisomerism": "No",
+          "charge": 1,
+          "count": 2,
+          "stereochemistry": "ACHIRAL",
+          "count_amount": {
+            "uuid": "92177e71-529b-4f36-b771-9a7011ea61da",
+            "type": "MOL RATIO",
+            "average": 2,
+            "units": "MOL RATIO"
+          },
+          "defined_stereo": 0,
+          "ez_centers": 0,
+          "molecular_weight": "39.0983",
+          "optical_activity": "NONE",
+          "stereo_centers": 0
+        },
+        {
+          "uuid": "d5f5c08a-190c-4dc9-9a07-d59dadafde7a",
+          "id": "d5f5c08a-190c-4dc9-9a07-d59dadafde7a",
+          "molfile": "\n  Marvin  01132111052D          \n\n  4  3  0  0  0  0            999 V2000\n    7.3876   -3.2827    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n    7.3876   -4.3134    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    8.0190   -4.8288    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n    6.7434   -4.8288    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  0  0  0  0\n  2  3  1  0  0  0  0\n  2  4  2  0  0  0  0\nM  END",
+          "smiles": "SC(S)=S",
+          "formula": "CH2S3",
+          "atropisomerism": "No",
+          "charge": 0,
+          "count": 1,
+          "stereochemistry": "ACHIRAL",
+          "count_amount": {
+            "uuid": "e98fcf27-cd9a-4175-a608-d58019544a04",
+            "type": "MOL RATIO",
+            "average": 1,
+            "units": "MOL RATIO"
+          },
+          "defined_stereo": 0,
+          "ez_centers": 0,
+          "molecular_weight": "110.222",
+          "optical_activity": "NONE",
+          "stereo_centers": 0
+        }
+      ],
+      "definition_level": "COMPLETE",
+      "uuid": "e47644a7-60b7-4f1d-9f8b-53c438136928",
+      "version": "5",
+      "structure": {
+        "id": "f275c0f3-eb88-4db0-bf74-2fe4843fcf24",
+        "molfile": "\n  Marvin  01132112352D          \n\n  6  3  0  0  0  0            999 V2000\n    7.3876   -5.7565    0.0000 K   0  3  0  0  0  0  0  0  0  0  0  0\n    7.3876   -4.3134    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.3876   -3.2827    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n    8.0190   -4.8288    0.0000 S   0  5  0  0  0  0  0  0  0  0  0  0\n    6.7434   -4.8288    0.0000 S   0  5  0  0  0  0  0  0  0  0  0  0\n    7.3876   -5.7565    0.0000 K   0  3  0  0  0  0  0  0  0  0  0  0\n  2  3  2  0  0  0  0\n  2  4  1  0  0  0  0\n  2  5  1  0  0  0  0\nM  CHG  4   1   1   4  -1   5  -1   6   1\nM  STY  1   1 MUL\nM  SCN  1   1 HT \nM  SAL   1  2   1   6\nM  SPA   1  1   1\nM  SDI   1  4    6.9676   -6.1765    6.9676   -5.3365\nM  SDI   1  4    7.8076   -5.3365    7.8076   -6.1765\nM  SMT   1 2\nM  END",
+        "smiles": "[K+].[K+].[S-]C([S-])=S",
+        "formula": "CS3.2K",
+        "atropisomerism": "No",
+        "charge": 0,
+        "count": 1,
+        "stereochemistry": "ACHIRAL",
+        "defined_stereo": 0,
+        "ez_centers": 0,
+        "molecular_weight": "186.3876",
+        "optical_activity": "NONE",
+        "references": [
+          "e3c75aa1-7c89-4fd7-ab27-4ca598c68709",
+          "93a9c2d5-92ba-4461-9530-a80fceab8bce"
+        ],
+        "stereo_centers": 0
+      },
+      "unii": "VQQ1LG370N",
+      "tags": [
+        "MI"
+      ]
+    }
+  ]
+}

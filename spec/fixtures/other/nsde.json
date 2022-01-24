@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-23",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 508297
+    }
+  },
+  "results": [
+    {
+      "proprietary_name": "Covidizer Hand Sanitizer",
+      "application_number_or_citation": "part333E",
+      "product_type": "HUMAN OTC DRUG",
+      "marketing_start_date": "20200401",
+      "package_ndc": "78715-000-02",
+      "marketing_category": "OTC monograph not final",
+      "package_ndc11": "78715000002",
+      "dosage_form": "GEL"
+    }
+  ]
+}

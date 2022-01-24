@@ -44,8 +44,8 @@ module OpenFdaApi
     # @param skip   [Integer]     Number of results to skip
     # @param limit  [Integer]     Number of results to return
     # @return Response from the API parsed as JSON
-    def premarket_501ks(search: [], sort: [], count: [], skip: 0, limit: 1)
-      endpoint = "501k.json"
+    def premarket_510ks(search: [], sort: [], count: [], skip: 0, limit: 1)
+      endpoint = "510k.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
       query    = build_query(inputs, {}) # TODO: Upload valid fields
       make_request(endpoint, query)

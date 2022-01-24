@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2022-01-05",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 1041658
+    }
+  },
+  "results": [
+    {
+      "reaction": [
+        {
+          "veddra_version": "6",
+          "veddra_term_code": "99115",
+          "veddra_term_name": "INEFFECTIVE, HEARTWORM LARVAE"
+        },
+        {
+          "veddra_version": "11",
+          "veddra_term_code": "2190",
+          "veddra_term_name": "Unclassifiable adverse event"
+        }
+      ],
+      "receiver": {
+        "organization": "Food and Drug Administration Center for Veterinary Medicine",
+        "street_address": "7500 Standish Place (HFV-210) Room N403",
+        "city": "Rockville",
+        "state": "MD",
+        "postal_code": "20855",
+        "country": "USA"
+      },
+      "unique_aer_id_number": "USA-USFDACVM-2015-US-100721",
+      "original_receive_date": "20090518",
+      "number_of_animals_affected": "1",
+      "primary_reporter": "Other",
+      "number_of_animals_treated": "1",
+      "drug": [
+        {
+          "route": "Oral",
+          "used_according_to_label": "true",
+          "lot_number": "UNKNOWN",
+          "brand_name": "MSK",
+          "dosage_form": "Tablet",
+          "manufacturer": {
+            "name": "MSK",
+            "registration_number": "USA-USFDACVM-N140915"
+          },
+          "atc_vet_code": "QP54AB01",
+          "active_ingredients": [
+            {
+              "name": "Milbemycin",
+              "dose": {
+                "numerator": "1",
+                "numerator_unit": "Unknown",
+                "denominator": "1",
+                "denominator_unit": "Unknown"
+              }
+            }
+          ]
+        }
+      ],
+      "health_assessment_prior_to_exposure": {
+        "assessed_by": "Veterinarian"
+      },
+      "onset_date": "20090506",
+      "report_id": "N140915",
+      "animal": {
+        "species": "Dog",
+        "gender": "Female",
+        "reproductive_status": "Neutered",
+        "female_animal_physiological_status": "NOT APPLICABLE",
+        "age": {
+          "min": "14.50",
+          "unit": "Month",
+          "qualifier": "Measured"
+        },
+        "weight": {
+          "min": "6.800",
+          "unit": "Kilogram",
+          "qualifier": "Measured"
+        },
+        "breed": {
+          "is_crossbred": "false",
+          "breed_component": "Dachshund (unspecified)"
+        }
+      },
+      "type_of_information": "Safety Issue"
+    }
+  ]
+}

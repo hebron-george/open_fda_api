@@ -28,6 +28,18 @@ module OpenFdaApi
       OpenFdaApi::Food.new(self)
     end
 
+    def animal_and_veterinary
+      OpenFdaApi::AnimalAndVeterinary.new(self)
+    end
+
+    def tobacco
+      OpenFdaApi::Tobacco.new(self)
+    end
+
+    def other
+      OpenFdaApi::Other.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json
