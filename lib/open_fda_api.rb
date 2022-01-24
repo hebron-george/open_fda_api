@@ -8,6 +8,7 @@ module OpenFdaApi
 
   autoload :Client, "open_fda_api/client"
   autoload :Endpoint, "open_fda_api/endpoint"
+  autoload :AnimalAndVeterinary, "open_fda_api/animal_and_veterinary"
   autoload :Drugs, "open_fda_api/drugs"
   autoload :Device, "open_fda_api/device"
   autoload :Food, "open_fda_api/food"
