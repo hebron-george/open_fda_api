@@ -6,7 +6,7 @@ RSpec.describe OpenFdaApi::Tobacco do
   let(:instance) { client.tobacco }
   let(:client)   { OpenFdaApi::Client.new(adapter: :test, stubs: stub) }
 
-  context "#adverse_events API call" do
+  context "#problem_reports API call" do
     let(:stub) do
       Faraday::Adapter::Test::Stubs.new do |stub|
         stub.get("https://api.fda.gov/tobacco/problem.json") do |_env|
