@@ -11,7 +11,7 @@ require "open_fda_api"
 # require "pry"
 # Pry.start
 
-client = OpenFdaApi.client
+client = OpenFdaApi::Client.new
 puts "Client is ready: #{client}"
 
 require "irb"

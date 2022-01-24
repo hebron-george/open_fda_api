@@ -3,8 +3,6 @@
 require "net/http"
 require "json"
 require "yaml"
-require "open_fda_api/query_inputs"
-require "open_fda_api/query_builder"
 
 module OpenFdaApi
   # Interact with the Drugs API Endpoint:

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_fda_api (0.0.6)
+    open_fda_api (0.0.8)
       faraday (~> 1.9)
       faraday_middleware (~> 1.2)
 
