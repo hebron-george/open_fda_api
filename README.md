@@ -19,7 +19,9 @@ bundle install
 ## Usage
 
 ```ruby
-client = OpenFdaApi.client
+client = OpenFdaApi::Client.new
+# or if you have registered an API key
+client = OpenFdaApi::Client.new(api_key: ENV['OPEN_FDA_API_KEY'])
 
 # First 20 results where (fieldA=foo AND fieldB=bar) OR (fieldC=baz AND fieldA exists)
 # Sorted by (fieldD) in descending order
@@ -42,7 +44,7 @@ client.drugs.recall_enforcement_reports(args)
 client.drugs.drugs_at_fda(args)
 
 # Device API
-client.device.premarket_501ks(args)
+client.device.premarket_510ks(args)
 client.device.classification(args)
 client.device.recall_enforcement_reports(args)
 client.device.adverse_events(args)
@@ -72,9 +74,35 @@ The openFDA API can be queried with these arguments: `search`, `sort`, `count`, 
 that are ANDed together and all the elements in the array are ORed together. Here are some examples to illustrate:
 
 ```ruby
-search = [{"patient.drug.openfda.pharm_class_epc" => "nonsteroidal+anti-inflammatory+drug" }]
+# Default arguments
+args = {
+  search: [],
+  sort:   [],
+  count:  [],
+  skip:   0,
+  limit:  1,
+}
 
-# patient.drug.openfda.pharm_class_epc:"nonsteroidal+anti-inflammatory+drug"&count=patient.reaction.reactionmeddrapt.exact
+# Search for a single field
+args = {
+  search: [{ fieldA: "value" }]
+}
+
+# Search for field A AND field B
+args = {
+  search: [{ fieldA: "value", fieldB: "other value" }]
+}
+
+# Search for field A OR field B
+args = {
+  search: [{ fieldA: "value"}, { fieldB: "other value" }]
+}
+
+# Search for field A or field B, and skip the first 10 results
+args = {
+  search: [{ fieldA: "value"}, { fieldB: "other value" }],
+  skip: 10
+}
 ```
 
 ## Development
