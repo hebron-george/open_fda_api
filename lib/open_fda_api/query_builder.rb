@@ -26,7 +26,7 @@ module OpenFdaApi
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
     # @param [Hash] valid_search_fields
-    # @param [QueryInput] query_input
+    # @param [QueryInputs] query_input
     def initialize(query_input:, valid_search_fields:)
       # TODO: Turn validations back on once we get basic functionality working; need to flex on different field types
       # validate_arguments!(valid_search_fields, query_input: query_input)
