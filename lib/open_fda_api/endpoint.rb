@@ -14,7 +14,7 @@ module OpenFdaApi
     end
 
     def build_inputs(search:, sort:, count:, skip:, limit:)
-      QueryInputs.new(search: search, sort: sort, count: count, skip: skip, limit: limit)
+      QueryInputs.new(search: search, sort: sort, count: count, skip: skip, limit: limit, api_key: client.api_key)
     end
 
     def make_request(endpoint, query)

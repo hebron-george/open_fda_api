@@ -31,16 +31,18 @@ module OpenFdaApi
       # TODO: Turn validations back on once we get basic functionality working; need to flex on different field types
       # validate_arguments!(valid_search_fields, query_input: query_input)
       warn "You've passed in a valid_search_fields arg but it isn't being used right now..." if valid_search_fields
-      @search = build_query_string(query_fields: query_input.search)
-      @sort   = build_query_string(query_fields: query_input.sort)
-      @count  = build_query_string(query_fields: query_input.count)
-      @skip   = build_skip_string(query_input.skip)
-      @limit  = query_input.limit
+      @search  = build_query_string(query_fields: query_input.search)
+      @sort    = build_query_string(query_fields: query_input.sort)
+      @count   = build_query_string(query_fields: query_input.count)
+      @skip    = build_skip_string(query_input.skip)
+      @limit   = query_input.limit
+      @api_key = query_input.api_key
     end
 
     # @return [Hash] the query string portion of a request
     def build_query
       {
+        api_key: @api_key,
         search: @search,
         sort: @sort,
         count: @count,
