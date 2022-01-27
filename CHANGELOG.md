@@ -1,4 +1,7 @@
-## [Unreleased]
+## openFDA API
+
+## [0.0.13] - 2022-01-27
+- Set API key if it is available and send it in with every request
 
 ## [0.0.12] - 2022-01-24
 - Animal & Veterinary Endpoint
