@@ -57,8 +57,8 @@ RSpec.describe OpenFdaApi::QueryBuilder do
 
       context "with invalid arguments" do
         let(:search) { [{ "abadkey" => "a bad value" }, { "anotherbadkey" => "another bad value" }] }
-        xit "raises an error" do
-          expect { build_query }.to raise_error(OpenFdaApi::InvalidQueryArgument)
+        it "ignores unknown fields and builds the query" do
+          expect(build_query).to eq(search: "(abadkey:a+bad+value)+(anotherbadkey:another+bad+value)")
         end
       end
     end

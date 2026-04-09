@@ -2,24 +2,28 @@
 
 RSpec.describe "OpenFdaApi::Client" do
   let(:instance) { OpenFdaApi::Client.new }
+
   context "#drugs" do
-    subject(:drugs) { instance.drugs }
-    it "has the right type" do
-      expect(drugs).to be_a(OpenFdaApi::Drugs)
-    end
+    it { expect(instance.drugs).to be_a(OpenFdaApi::Drugs) }
   end
 
   context "#device" do
-    subject(:device) { instance.device }
-    it "has the right type" do
-      expect(device).to be_a(OpenFdaApi::Device)
-    end
+    it { expect(instance.device).to be_a(OpenFdaApi::Device) }
   end
 
   context "#food" do
-    subject(:food) { instance.food }
-    it "has the right type" do
-      expect(food).to be_a(OpenFdaApi::Food)
-    end
+    it { expect(instance.food).to be_a(OpenFdaApi::Food) }
+  end
+
+  context "#animal_and_veterinary" do
+    it { expect(instance.animal_and_veterinary).to be_a(OpenFdaApi::AnimalAndVeterinary) }
+  end
+
+  context "#tobacco" do
+    it { expect(instance.tobacco).to be_a(OpenFdaApi::Tobacco) }
+  end
+
+  context "#other" do
+    it { expect(instance.other).to be_a(OpenFdaApi::Other) }
   end
 end

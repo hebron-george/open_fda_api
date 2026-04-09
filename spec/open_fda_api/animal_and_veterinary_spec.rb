@@ -16,8 +16,8 @@ RSpec.describe OpenFdaApi::AnimalAndVeterinary do
       end
     end
     subject(:adverse_events_call) { instance.adverse_events }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 end

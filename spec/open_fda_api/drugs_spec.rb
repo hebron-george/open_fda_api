@@ -13,8 +13,8 @@ RSpec.describe OpenFdaApi::Drugs do
       end
     end
     subject(:adverse_events_call) { instance.adverse_events }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -27,8 +27,8 @@ RSpec.describe OpenFdaApi::Drugs do
       end
     end
     subject(:product_labeling_call) { instance.product_labeling }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -41,8 +41,8 @@ RSpec.describe OpenFdaApi::Drugs do
       end
     end
     subject(:ndc_directory_call) { instance.ndc_directory }
-    it "converts the response to a Hash" do
-      expect(ndc_directory_call.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(ndc_directory_call).to include("meta", "results")
     end
   end
 
@@ -55,8 +55,8 @@ RSpec.describe OpenFdaApi::Drugs do
       end
     end
     subject(:recall_enforcement_reports_call) { instance.recall_enforcement_reports }
-    it "converts the response to a Hash" do
-      expect(recall_enforcement_reports_call.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(recall_enforcement_reports_call).to include("meta", "results")
     end
   end
 
@@ -69,8 +69,8 @@ RSpec.describe OpenFdaApi::Drugs do
       end
     end
     subject(:drugs_at_fda_call) { instance.drugs_at_fda }
-    it "converts the response to a Hash" do
-      expect(drugs_at_fda_call.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(drugs_at_fda_call).to include("meta", "results")
     end
   end
 end
