@@ -13,8 +13,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:adverse_events_call) { instance.adverse_events }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -27,8 +27,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:classification_call) { instance.classification }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -41,8 +41,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:premarket_510ks_call) { instance.premarket_510ks }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -55,8 +55,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:recall_enforcement_reports_call) { instance.recall_enforcement_reports }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -69,8 +69,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:premarket_approval_call) { instance.premarket_approval }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -83,8 +83,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:recalls_call) { instance.recalls }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -97,8 +97,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:registrations_and_listings_call) { instance.registrations_and_listings }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -111,8 +111,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:covid19_serological_tests_call) { instance.covid19_serological_tests }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 
@@ -125,8 +125,8 @@ RSpec.describe OpenFdaApi::Device do
       end
     end
     subject(:unique_device_identifier_call) { instance.unique_device_identifier }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 end

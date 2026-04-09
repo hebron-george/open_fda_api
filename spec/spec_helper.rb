@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require "simplecov"
+SimpleCov.start do
+  minimum_coverage 80
+end
+
 require "open_fda_api"
 require "pry"
 

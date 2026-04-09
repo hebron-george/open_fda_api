@@ -16,8 +16,8 @@ RSpec.describe OpenFdaApi::Tobacco do
       end
     end
     subject(:problem_reports_call) { instance.problem_reports }
-    it "converts the response to a Hash" do
-      expect(subject.class).to eq(Hash)
+    it "returns a response with meta and results" do
+      expect(subject).to include("meta", "results")
     end
   end
 end
