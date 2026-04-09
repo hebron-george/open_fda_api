@@ -64,6 +64,40 @@ client.other.substance_data_reports(args)
 
 # Tobacco API
 client.tobacco.problem_reports(args)
+
+# Transparency API
+client.transparency.complete_response_letters(args)
+```
+
+### Transparency — Complete Response Letters
+
+Complete Response Letters (CRLs) are issued by the FDA when a New Drug Application (NDA)
+or Biologics License Application (BLA) cannot be approved in its current form.
+
+```ruby
+client = OpenFdaApi::Client.new
+
+# Fetch the most recent CRL
+client.transparency.complete_response_letters(limit: 1)
+
+# Search by company name
+client.transparency.complete_response_letters(
+  search: [{ "company_name" => "Pfizer" }],
+  limit: 10
+)
+
+# Search by approver center and sort by letter date descending
+client.transparency.complete_response_letters(
+  search: [{ "approver_center" => "Center for Drug Evaluation and Research" }],
+  sort: [{ "letter_date" => "desc" }],
+  limit: 5
+)
+
+# Search for CRLs from a specific company OR a specific approver
+client.transparency.complete_response_letters(
+  search: [{ "company_name" => "Novartis" }, { "approver_name" => "John Doe" }],
+  limit: 10
+)
 ```
 
 ### Querying
@@ -116,7 +150,7 @@ To release a new version, update the version number in `version.rb`, and then ru
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hebron-george/open_fda_api .
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/open_fda_api/blob/master/CODE_OF_CONDUCT.md).
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hebron-george/open_fda_api/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -124,4 +158,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the OpenFdaApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/open_fda_api/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the OpenFdaApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hebron-george/open_fda_api/blob/main/CODE_OF_CONDUCT.md).

@@ -14,6 +14,7 @@ module OpenFdaApi
   autoload :Food, "open_fda_api/food"
   autoload :Other, "open_fda_api/other"
   autoload :Tobacco, "open_fda_api/tobacco"
+  autoload :Transparency, "open_fda_api/transparency"
   autoload :QueryInputs, "open_fda_api/query_inputs"
   autoload :QueryBuilder, "open_fda_api/query_builder"
 end

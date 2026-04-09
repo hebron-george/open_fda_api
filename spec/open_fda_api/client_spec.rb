@@ -26,4 +26,8 @@ RSpec.describe "OpenFdaApi::Client" do
   context "#other" do
     it { expect(instance.other).to be_a(OpenFdaApi::Other) }
   end
+
+  context "#transparency" do
+    it { expect(instance.transparency).to be_a(OpenFdaApi::Transparency) }
+  end
 end

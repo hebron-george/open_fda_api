@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2024-01-01",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 100
+    }
+  },
+  "results": [
+    {
+      "file_name": "example_crl.pdf",
+      "application_number": "NDA012345",
+      "letter_type": "COMPLETE RESPONSE",
+      "letter_date": "2023-06-15",
+      "company_name": "Example Pharmaceuticals Inc.",
+      "company_rep": "Jane Smith",
+      "company_address": "123 Pharma Way, New York, NY 10001",
+      "approver_name": "John Doe",
+      "approver_title": "Acting Deputy Director",
+      "approver_center": "Center for Drug Evaluation and Research",
+      "text": "We have completed our review of this application and have determined that we cannot approve this application in its present form."
+    }
+  ]
+}

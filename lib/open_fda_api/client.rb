@@ -39,6 +39,10 @@ module OpenFdaApi
       OpenFdaApi::Other.new(self)
     end
 
+    def transparency
+      OpenFdaApi::Transparency.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json
