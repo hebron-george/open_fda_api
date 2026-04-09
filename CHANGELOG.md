@@ -1,5 +1,19 @@
 ## openFDA API
 
+## [0.2.0] - 2026-04-09
+- Add Transparency API endpoint with support for Complete Response Letters (`crl.json`)
+- Update README with Transparency endpoint usage examples
+
+## [0.1.0] - 2026-04-09
+- Upgrade Faraday from 1.x to 2.x (removes `faraday_middleware` dependency)
+- Upgrade RuboCop to 1.86, RSpec to 3.13, Rake to 13.3
+- Drop support for Ruby < 3.1 (2.7 and 3.0 are EOL); add `.ruby-version` pinned to 3.2.2
+- Add SimpleCov with 80% minimum coverage threshold
+- Split CI into separate lint and test jobs; test against Ruby 3.1, 3.2, and 3.3
+- Add Dependabot for automated dependency updates
+- Remove unused field validation scaffolding and all associated TODO comments
+- Improve test assertions across all endpoint specs
+
 ## [0.0.13] - 2022-01-27
 - Set API key if it is available and send it in with every request
 
