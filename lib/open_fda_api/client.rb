@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "faraday"
-require "faraday_middleware"
 
 module OpenFdaApi
   # Gives you access to the main nouns in the openFDA API
@@ -44,7 +43,6 @@ module OpenFdaApi
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :json
 
-        conn.response :dates
         conn.response :json, content_type: "application/json"
 
         conn.adapter adapter, @stubs
