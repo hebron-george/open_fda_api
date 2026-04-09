@@ -21,7 +21,7 @@ module OpenFdaApi
     def adverse_events(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "event.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {})
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -34,7 +34,7 @@ module OpenFdaApi
     def classification(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "classification.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -47,7 +47,7 @@ module OpenFdaApi
     def premarket_510ks(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "510k.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -60,7 +60,7 @@ module OpenFdaApi
     def recall_enforcement_reports(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "enforcement.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -73,7 +73,7 @@ module OpenFdaApi
     def premarket_approval(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "pma.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -86,7 +86,7 @@ module OpenFdaApi
     def recalls(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "recall.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -99,7 +99,7 @@ module OpenFdaApi
     def registrations_and_listings(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "registrationlisting.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -112,7 +112,7 @@ module OpenFdaApi
     def covid19_serological_tests(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "covid19serology.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -125,7 +125,7 @@ module OpenFdaApi
     def unique_device_identifier(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "udi.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 

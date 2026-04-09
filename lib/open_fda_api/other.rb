@@ -14,7 +14,7 @@ module OpenFdaApi
     def nsde(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "nsde.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -27,7 +27,7 @@ module OpenFdaApi
     def substance_data_reports(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "substance.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
