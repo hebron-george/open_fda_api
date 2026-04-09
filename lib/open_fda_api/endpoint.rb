@@ -9,8 +9,8 @@ module OpenFdaApi
       @client = client
     end
 
-    def build_query(query_input, valid_search_fields)
-      QueryBuilder.new(query_input: query_input, valid_search_fields: valid_search_fields).build_query
+    def build_query(query_input)
+      QueryBuilder.new(query_input: query_input).build_query
     end
 
     def build_inputs(search:, sort:, count:, skip:, limit:)

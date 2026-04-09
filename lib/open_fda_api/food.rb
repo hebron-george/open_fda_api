@@ -14,7 +14,7 @@ module OpenFdaApi
     def adverse_events(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "event.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -27,7 +27,7 @@ module OpenFdaApi
     def recall_enforcement_reports(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "enforcement.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "yaml"
-
 module OpenFdaApi
   # Interact with the Drugs API Endpoint:
   #  - Adverse Events
@@ -19,7 +17,7 @@ module OpenFdaApi
     def adverse_events(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "event.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, self.class.valid_adverse_events_fields)
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -32,7 +30,7 @@ module OpenFdaApi
     def product_labeling(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "label.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -45,7 +43,7 @@ module OpenFdaApi
     def ndc_directory(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "ndc.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -58,7 +56,7 @@ module OpenFdaApi
     def recall_enforcement_reports(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "enforcement.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
     end
 
@@ -71,12 +69,8 @@ module OpenFdaApi
     def drugs_at_fda(search: [], sort: [], count: [], skip: 0, limit: 1)
       endpoint = "drugsfda.json"
       inputs   = build_inputs(search: search, sort: sort, count: count, skip: skip, limit: limit)
-      query    = build_query(inputs, {}) # TODO: Upload valid fields
+      query    = build_query(inputs)
       make_request(endpoint, query)
-    end
-
-    def self.valid_adverse_events_fields
-      @valid_adverse_events_fields ||= ::YAML.load_file("#{__dir__}/adverse_events_fields.yml")
     end
 
     private

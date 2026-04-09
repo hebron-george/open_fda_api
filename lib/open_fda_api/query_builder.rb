@@ -25,12 +25,8 @@ module OpenFdaApi
   #   Use in combination with limit to paginate results. Currently, the largest allowed value for the skip parameter
   #   is 25000. See Paging if you require paging through larger result sets.
   class QueryBuilder
-    # @param [Hash] valid_search_fields
     # @param [QueryInputs] query_input
-    def initialize(query_input:, valid_search_fields:)
-      # TODO: Turn validations back on once we get basic functionality working; need to flex on different field types
-      # validate_arguments!(valid_search_fields, query_input: query_input)
-      warn "You've passed in a valid_search_fields arg but it isn't being used right now..." if valid_search_fields
+    def initialize(query_input:)
       @search  = build_query_string(query_fields: query_input.search)
       @sort    = build_query_string(query_fields: query_input.sort)
       @count   = build_query_string(query_fields: query_input.count)
@@ -53,25 +49,6 @@ module OpenFdaApi
 
     private
 
-    def validate_arguments!(valid_search_fields, query_input:)
-      # `search` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.search)
-      raise InvalidQueryArgument, "'search' has invalid fields: #{invalid_fields}" if invalid_fields.any?
-
-      # `sort` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.sort)
-      raise InvalidQueryArgument, "'sort' has invalid fields: #{invalid_fields}" if invalid_fields.any?
-
-      # `count` keys must exist in adverse_events_fields.yml
-      invalid_fields = get_invalid_fields(valid_search_fields: valid_search_fields, fields: query_input.count)
-      raise InvalidQueryArgument, "'count' has invalid fields: #{invalid_fields}" if invalid_fields.any?
-
-      # `count` and `skip` cannot be set at the same time
-      return unless count_and_skip_set?(query_input.count, query_input.skip)
-
-      raise InvalidQueryArgument, "'count' and 'skip' cannot both be set at the same time!"
-    end
-
     def build_query_string(query_fields:)
       return "" if query_fields.empty?
 
@@ -86,22 +63,6 @@ module OpenFdaApi
       fields.map do |and_args|
         "(#{and_args.map { |k, v| "#{k}:#{v.gsub(" ", "+")}" }.join("+AND+")})"
       end.join("+")
-    end
-
-    def get_invalid_fields(valid_search_fields:, fields:)
-      # TODO: valid_search_fields define types and we need to check against those
-      fields.map(&:keys).flatten.select do |field|
-        if field.include?(".") # nested field (e.g. patient.patientagegroup)
-          dig_values = field.split(".").join(",properties,").split(",")
-          valid_search_fields["properties"].dig(*dig_values).nil?
-        else
-          !valid_search_fields["properties"].keys.include?(field.to_s)
-        end
-      end
-    end
-
-    def count_and_skip_set?(count, skip)
-      skip.positive? && !count.empty?
     end
   end
 end
