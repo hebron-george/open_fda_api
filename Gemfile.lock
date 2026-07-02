@@ -18,7 +18,7 @@ GEM
     faraday-net_http (3.4.3)
       net-http (~> 0.5)
     io-console (0.8.2)
-    json (2.19.8)
+    json (2.20.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -53,7 +53,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.7)
-    rubocop (1.87.0)
+    rubocop (1.88.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -88,7 +88,7 @@ DEPENDENCIES
   pry
   rake (~> 13.4)
   rspec (~> 3.0)
-  rubocop (~> 1.87)
+  rubocop (~> 1.88)
   simplecov
 
 BUNDLED WITH
